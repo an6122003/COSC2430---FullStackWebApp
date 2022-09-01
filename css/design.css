@@ -1,3 +1,26 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 1.5rem;
+}
+
+label{
+    font-size: 1.3rem;
+    
+}
+
+div {
+    display: block;
+}
+
+body{
+    margin: 0;
+}
+
 header{
     background-color: gainsboro;
 }
@@ -5,3 +28,78 @@ header{
 footer{
     background-color: gainsboro;
 }
+
+
+.mainContent{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+
+}
+
+.row{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    
+}
+
+.priceField{
+    padding: .5rem;
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px){
+    .column1{
+        padding: 1rem;
+        background-color: red;
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    
+    .column2{
+        padding: 1rem;
+        background-color: blue;
+        flex: 0 0 auto;
+        width: 75%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+}
+
+
+
+.flexContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.leftPanel{
+
+
+    margin-left: 100px;
+    width: 25%;
+
+    background-color: #E7E9EB;
+    background-color: red;
+    
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
