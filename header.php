@@ -1,4 +1,13 @@
+<?php
+    session_start();
+?>
+
 <nav>
-    <a href="login.php">Login</a>
-    <a href="#">My Account</a>
+    <?php 
+        if(isset($_SESSION['loggedin'])){
+            echo "<a href='#'>My Account</a>";
+        } else{
+            echo "<a href='login.php'>Login</a>";
+        }
+    ?>
 </nav>

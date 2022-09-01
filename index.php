@@ -17,7 +17,7 @@
 
     <main>
         <h1>Welcome to our wesite</h1>
-        <p>Haven't had account? Register <a href="register/register_roles.php">here</a>.</p>
+        <p>Haven't had account? Register <a href="register_roles.php">here</a>.</p>
     </main>
 
     <footer>

@@ -10,11 +10,35 @@
 </head>
 <body>
     <main>
-        <form method="post" action="index.php">
+        <form method="post" action="login.php">
             <input type="text" name="username" placeholder="User Name"> <br>
             <input type="text" name="password" placeholder="Password"> <br>
             <input type="submit" name="login" value="login"> 
         </form>
     </main>
 </body>
+<?php
+    session_start();
+    function checkLogin(){
+        $check = false;
+        $lines = file('accounts.db');
+        foreach($lines as $line){
+            $line_array = explode('@@@', $line);
+            if(($line_array[1] == $_POST['username']) && (password_verify($_POST['password'], $line_array[2]))){
+                $check = true;
+                break;
+            }
+        }
+        return $check;
+    }
+    if(isset($_POST['login'])){
+        $isLoggedin = checkLogin();
+        if($isLoggedin){
+            $_SESSION['loggedin'] = true;
+            header ('location: index.php');
+        } else{
+            echo 'login fail';
+        }
+    }
+?>
 </html>
