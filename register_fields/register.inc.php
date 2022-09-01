@@ -52,9 +52,9 @@
                 $uniBusinessAddress = checkUniqueness(4, 'business_address');
                 if ($uniBusinessName && $uniBusinessAddress){
                     saveVendorToFile();
-                    header('location: register_roles.php?message=succeed');
+                    header('location: ../register_roles.php?message=succeed');
                 } else{
-                    header('location: register_vendor.php?message=business_exist');
+                    header('location: ../register_vendor.php?message=business_exist');
                 }
             }
         } else{
