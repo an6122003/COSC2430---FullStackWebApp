@@ -77,27 +77,6 @@ footer{
 }
 
 
-
-.flexContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    overflow: hidden;
-}
-
-.leftPanel{
-
-
-    margin-left: 100px;
-    width: 25%;
-
-    background-color: #E7E9EB;
-    background-color: red;
-    
-}
-
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
     -webkit-appearance: none;

@@ -30,12 +30,34 @@
                 <div class="column2">
                     <?php
                         $currentDir=__DIR__;
-                        echo readfile("products.csv");
 
-
-                        $products = fopen("products.csv", "r");
-                        //$details = str_getcsv($products, ",", "\"", "\\");
-                        // echo $details[0];
+                        function readFromFile(){
+                            $file_name = 'products.csv';
+                            $fp = fopen($file_name, 'r');
+                            // first row => field names
+                            $first = fgetcsv($fp);
+                            $products = [];
+                            while ($row = fgetcsv($fp)) {
+                                $i = 0;
+                                $product = [];
+                                foreach ($first as $col_name) {
+                                    $product[$col_name] =  $row[$i];
+                                    // treat sizes differently
+                                    // make it an array
+                                    if ($col_name == 'Description') {
+                                        $product[$col_name] = explode(',', $product[$col_name]);
+                                    }
+                                    $i++;
+                                }
+                                $products[] = $product;
+                                
+                            }
+                            $output = $products[1]['Name'];
+                            echo $output;
+                        // overwrite the session variable
+                        //$_SESSION['products'] = $products;
+                        }
+                        readFromFile();
                     ?>
                 </div>
             </div>
