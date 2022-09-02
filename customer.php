@@ -50,14 +50,33 @@
                                     $i++;
                                 }
                                 $products[] = $product;
-                                
                             }
-                            $output = $products[1]['Name'];
-                            echo $output;
                         // overwrite the session variable
-                        //$_SESSION['products'] = $products;
+                        $_SESSION['products'] = $products;
                         }
                         readFromFile();
+                        
+                        function displayProducts(){
+                            $counter = 1;
+                            while ($counter <= count($_SESSION['products'])) {
+                                $imageDir = $_SESSION['products'][$counter-1]['Image Dir'];
+                                $prodName = $_SESSION['products'][$counter-1]['Name'];
+                                $prodPrice = $_SESSION['products'][$counter-1]['Price'];
+                                echo "<div class='productDisplay'>
+                                    <div class='productImageDiv'>
+                                    <img class='productImage' src=$imageDir>
+                                    </div>
+                                    <div class='productText'>
+                                        <p>$prodName</p>
+                                    </div>
+                                    <div class='productText'>
+                                        <p>$prodPrice</p>
+                                    </div>
+                                </div>";
+                                $counter++;
+                            }
+                        }
+                        displayProducts()
                     ?>
                 </div>
             </div>
