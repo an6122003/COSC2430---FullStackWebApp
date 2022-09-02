@@ -20,14 +20,14 @@ function validate(){
     if(errorMessage == ""){
         return true;
     } else{
-        let validateMessage = document.querySelector(".validate_message");
+        let validateMessage = document.querySelector(".validateMessage");
         validateMessage.innerHTML = errorMessage;
         return false;
     }
 }
 
 function init(){
-    let form = document.querySelector(".register_form");
+    let form = document.querySelector(".registerForm");
     form.onsubmit = validate;
 }
 

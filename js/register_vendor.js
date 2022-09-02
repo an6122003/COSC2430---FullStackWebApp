@@ -1,8 +1,8 @@
 function validate(){
     let userName = document.querySelector('#username').value;
     let password = document.querySelector('#password').value;
-    let businessName = document.querySelector('#business_name').value;
-    let businessAddress = document.querySelector('#business_address').value;
+    let businessName = document.querySelector('#businessName').value;
+    let businessAddress = document.querySelector('#businessAddress').value;
     let errorMessage = "";
 
     if(userName.match("^[a-zA-Z0-9]{8,15}$") == null){
@@ -22,14 +22,14 @@ function validate(){
     if(errorMessage == ""){
         return true;
     } else{
-        let validateMessage = document.querySelector(".validate_message");
+        let validateMessage = document.querySelector(".validateMessage");
         validateMessage.innerHTML = errorMessage;
         return false;
     }
 }
 
 function init(){
-    let form = document.querySelector(".register_form");
+    let form = document.querySelector(".registerForm");
     form.onsubmit = validate;
 }
 

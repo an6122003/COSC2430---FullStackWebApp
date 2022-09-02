@@ -23,10 +23,10 @@
     <?php 
         if (isset($_GET['message'])){
             if($_GET['message'] == 'succeed'){
-                echo "<div class='succeed_message'><p>Register successfully!</p><div/>";
+                echo "<div class='succeedMessage'><p>Register successfully!</p><div/>";
             }
             else if ($_GET['message'] == 'fail'){
-                echo "<div class='error_message'<p>Register fail! Username already exist.</p><div/>";
+                echo "<div class='errorMessage'<p>Register fail! Username already exist.</p><div/>";
             }
         }
     ?>

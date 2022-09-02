@@ -4,9 +4,9 @@
         $check = true;
         $lines = file('../accounts.db');
         foreach($lines as $line){
-            $line_array = explode('@@@', $line);
-            if (array_key_exists($index, $line_array)){
-                if($line_array[$index] == $_POST[$comparedValue]){
+            $lineArray = explode('@@@', $line);
+            if (array_key_exists($index, $lineArray)){
+                if($lineArray[$index] == $_POST[$comparedValue]){
                     $check = false;
                     break;
                 }
@@ -23,13 +23,13 @@
 
     function saveShipperToFile(){
         $file = fopen('../accounts.db',"a");
-        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['distribution_hub'] . PHP_EOL);
+        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['distributionHub'] . PHP_EOL);
         fclose($file);
     }
 
     function saveVendorToFile(){
         $file = fopen('../accounts.db',"a");
-        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['business_name'] . '@@@' . $_POST['business_address'] . PHP_EOL);
+        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['businessName'] . '@@@' . $_POST['businessAddress'] . PHP_EOL);
         fclose($file);
     }
 
@@ -48,13 +48,13 @@
             }
             //store vendor info
             else if($_POST['role'] == 'vendor'){
-                $uniBusinessName = checkUniqueness(3, 'business_name');
-                $uniBusinessAddress = checkUniqueness(4, 'business_address');
+                $uniBusinessName = checkUniqueness(3, 'businessName');
+                $uniBusinessAddress = checkUniqueness(4, 'businessAddress');
                 if ($uniBusinessName && $uniBusinessAddress){
                     saveVendorToFile();
                     header('location: ../register_roles.php?message=succeed');
                 } else{
-                    header('location: ../register_vendor.php?message=business_exist');
+                    header('location: ../register_fields/register_vendor.php?message=business_exist');
                 }
             }
         } else{

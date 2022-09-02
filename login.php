@@ -23,8 +23,8 @@
         $check = false;
         $lines = file('accounts.db');
         foreach($lines as $line){
-            $line_array = explode('@@@', $line);
-            if(($line_array[1] == $_POST['username']) && (password_verify($_POST['password'], $line_array[2]))){
+            $lineArray = explode('@@@', $line);
+            if(($lineArray[1] == $_POST['username']) && (password_verify($_POST['password'], $lineArray[2]))){
                 $check = true;
                 break;
             }

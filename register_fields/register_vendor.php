@@ -15,18 +15,18 @@
         <?php 
             if (isset($_GET['message'])){
                 if($_GET['message'] == 'business_exist'){
-                    echo "<div class='error_message'><p>Business already exists</p></div>";
+                    echo "<div class='errorMessage'><p>Business already exists</p></div>";
                 }
             }
         ?>
-        <div class="validate_message"></div>
-        <form enctype='multipart/form-data' method='post' action='register.inc.php' class="register_form">
+        <div class="validateMessage"></div>
+        <form enctype='multipart/form-data' method='post' action='../process/register_process.php' class="registerForm">
         Role: <input type='text' name='role' value='vendor' readonly> <br>
         Username: <input type='text' id='username' name='username' required> <br>
         Password: <input type='text' id='password' name='password' required> <br>
         Picture: <input type='file' name='picture'> <br>
-        Business Name: <input type='text' name='business_name' id='business_name' required> <br>
-        Business Address: <input type='text' name='business_address' id='business_address' required> <br>
+        Business Name: <input type='text' name='businessName' id='businessName' required> <br>
+        Business Address: <input type='text' name='businessAddress' id='businessAddress' required> <br>
         <input type='submit' name='act' value='register'>
         </form>
     </main>

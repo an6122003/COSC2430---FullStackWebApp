@@ -12,14 +12,14 @@
 <body>
     <main>
         <h1>Registration Form</h1>
-        <div class="validate_message"></div>
-        <form enctype='multipart/form-data' method='post' action='register.inc.php' class="register_form">
+        <div class="validateMessage"></div>
+        <form enctype='multipart/form-data' method='post' action='../process/register_process.php' class="registerForm">
               Role: <input type='text' name='role' value='shipper' readonly> <br>
               Username: <input type='text' id='username' name='username' required> <br>
               Password: <input type='text' id='password' name='password' required> <br>
               Picture: <input type='file' name='picture'> <br>
               Distribution hub: 
-              <select name="distribution_hub">
+              <select name="distributionHub">
                 <option value="hub1">Hub 1</option>
                 <option value="hub2">Hub 2</option>
                 <option value="hub3">Hub 3</option>
