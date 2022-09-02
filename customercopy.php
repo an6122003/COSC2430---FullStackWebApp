@@ -17,12 +17,13 @@
 
     <main>
         <div class="container pt-100 pb-100">
-            <div class="row">
-                <div class="col-lg-3 background">
-                    <h1>Price Range</h1>
-                    <form class=" row">
+            <div class="row background">
+                <div class="col-lg-3 ">
+                    <h2>Price Range</h2>
+                    <form class="row" method="post" action="customercopy.php">
                         <input type="number" name="minPrice" id="minPrice" class="col-lg-6" placeholder="Minimum Price">
                         <input type="number" name="maxPrice" id="maxPrice" class="col-lg-6" placeholder="Maximum Price">
+                        <input type="submit" value="Submit">
                     </form>
                 </div>
                 <div class="col-lg-9 row">
@@ -57,22 +58,45 @@
                         function displayProducts(){
                             $counter = 1;
                             while ($counter <= count($_SESSION['products'])) {
+                                // getting all the variables
                                 $imageDir = $_SESSION['products'][$counter-1]['Image Dir'];
                                 $prodName = $_SESSION['products'][$counter-1]['Name'];
                                 $prodPrice = $_SESSION['products'][$counter-1]['Price'];
-                                echo "<div class='text-bg-light container col-lg-3'>
-                                    <div class='productImageDiv'>
-                                    <img src=$imageDir>
-                                    </div>
-                                    <div class='productText'>
+
+                                if(isset($_POST['submit'])){
+                                    checkPrice();
+                                } 
+                                // price filter
+                                if ($prodPrice>=$_SESSION['minPrice'] && $prodPrice<=$_SESSION['maxPrice']){
+                                    echo "<div class='productDisplay text-bg-light col-lg-4'>
+                                        <img src=$imageDir>
                                         <p>$prodName</p>
-                                    </div>
-                                    <div class='productText'>
                                         <p>$prodPrice</p>
-                                    </div>
-                                </div>";
-                                $counter++;
+                                    </div>";
+                                    $counter++;
+                                }
+                                else{
+                                    $counter++;
+                                }
                             }
+                        }
+
+                        function checkPrice(){
+                            // check if min price is empty
+                            if (is_null($_POST['maxPrice'])){
+                                $maxPrice = 9999999;
+                            }
+                            else{
+                                $maxPrice = $_POST['maxPrice'];
+                            }
+                            if (is_null($_POST['minPrice'])){
+                                $minPrice = 0;
+                            }
+                            else{
+                                $minPrice = $_POST['minPrice'];
+                            }
+                            $_SESSION['minPrice'] = $minPrice;
+                            $_SESSION['maxPrice'] = $maxPrice;
                         }
                         displayProducts()
                     ?>
