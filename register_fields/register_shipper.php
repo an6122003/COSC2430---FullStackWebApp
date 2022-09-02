@@ -17,7 +17,7 @@
               Role: <input type='text' name='role' value='shipper' readonly> <br>
               Username: <input type='text' id='username' name='username' required> <br>
               Password: <input type='text' id='password' name='password' required> <br>
-              Picture: <input type='file' name='picture'> <br>
+              Image: <input type='file' name='image'> <br>
               Distribution hub: 
               <select name="distributionHub">
                 <option value="hub1">Hub 1</option>

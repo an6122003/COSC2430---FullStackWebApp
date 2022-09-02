@@ -24,7 +24,7 @@
         Role: <input type='text' name='role' value='vendor' readonly> <br>
         Username: <input type='text' id='username' name='username' required> <br>
         Password: <input type='text' id='password' name='password' required> <br>
-        Picture: <input type='file' name='picture'> <br>
+        Image: <input type='file' name='image'> <br>
         Business Name: <input type='text' name='businessName' id='businessName' required> <br>
         Business Address: <input type='text' name='businessAddress' id='businessAddress' required> <br>
         <input type='submit' name='act' value='register'>

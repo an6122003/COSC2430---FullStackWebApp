@@ -33,17 +33,29 @@
         fclose($file);
     }
 
+    function simplifyString($str){
+        $new_str = str_replace(' ', '_', strtolower($str));
+        return $new_str;
+    }
+    
+    function saveAvatar(){
+        $fileName = simplifyString($_POST['username']);
+        move_uploaded_file($_FILES['image']['tmp_name'], '../images/avatars/'.$fileName.'.png');
+    }
+
     if (isset($_POST['act'])){
         $isUnique = checkUniqueness(1,'username');
         if ($isUnique == true){
             //store customer info
             if($_POST['role'] == 'customer'){
                 saveCustomerToFile();
+                saveAvatar();
                 header('location: ../register_roles.php?message=succeed');
             }
             //store shipper info
             else if($_POST['role'] == 'shipper'){
                 saveShipperToFile();
+                saveAvatar();
                 header('location: ../register_roles.php?message=succeed');
             }
             //store vendor info
@@ -52,6 +64,7 @@
                 $uniBusinessAddress = checkUniqueness(4, 'businessAddress');
                 if ($uniBusinessName && $uniBusinessAddress){
                     saveVendorToFile();
+                    saveAvatar();
                     header('location: ../register_roles.php?message=succeed');
                 } else{
                     header('location: ../register_fields/register_vendor.php?message=business_exist');

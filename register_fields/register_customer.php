@@ -17,7 +17,7 @@
             Role: <input type='text' name='role' value='customer' readonly> <br>
             Username: <input type='text' id='username' name='username' required> <br>
             Password: <input type='text' id='password' name='password' required> <br>
-            Picture: <input type='file' name='picture'> <br>
+            Image: <input type='file' name='image'> <br>
             Name: <input type='text' id='name' name='name' required> <br>
             Address: <input type='text' id='address' name='address' required> <br>
             <input type='submit' name='act' value='register'>

@@ -4,10 +4,10 @@ function validate(){
     let errorMessage = "";
 
     if(userName.match("^[a-zA-Z0-9]{8,15}$") == null){
-        errorMessage += "Invalid user name (letters and digits, 8-15)<br>";
+        errorMessage += "Invalid user name (only letters and digits, 8-15)<br>";
     }
 
-    if(password.match("/////") == null){
+    if(password.match("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,20}$") == null){
         errorMessage += "Invalid password (at least 1 lower case, upper case, digit, special characters, 8-20) <br>";
     }
 
