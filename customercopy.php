@@ -67,17 +67,17 @@
                                     checkPrice();
                                 } 
                                 // price filter
-                                if ($prodPrice>=$_SESSION['minPrice'] && $prodPrice<=$_SESSION['maxPrice']){
+                                //if ($prodPrice>=$_SESSION['minPrice'] && $prodPrice<=$_SESSION['maxPrice']){
                                     echo "<div class='productDisplay text-bg-light col-lg-4'>
                                         <img src=$imageDir>
                                         <p>$prodName</p>
                                         <p>$prodPrice</p>
                                     </div>";
                                     $counter++;
-                                }
-                                else{
-                                    $counter++;
-                                }
+                                //}
+                                //else{
+                                    //$counter++;
+                                //}
                             }
                         }
 
