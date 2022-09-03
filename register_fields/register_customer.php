@@ -7,21 +7,65 @@
     <meta name="group" content="31">
     <title>Customer Register</title>
     <link rel="stylesheet" href="../css/design.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="../js/register_customer.js"></script>
 </head>
 <body>
+    <header>
+        <?php 
+            include '../header.php';
+        ?>
+    </header>
     <main>
-        <h1>Registration Form</h1>
-        <div class="validateMessage"></div>
-        <form enctype='multipart/form-data' method='post' action='../process/register_process.php' class="registerForm">
-            Role: <input type='text' name='role' value='customer' readonly> <br>
-            Username: <input type='text' id='username' name='username' required> <br>
-            Password: <input type='text' id='password' name='password' required> <br>
-            Image: <input type='file' name='image'> <br>
-            Name: <input type='text' id='name' name='name' required> <br>
-            Address: <input type='text' id='address' name='address' required> <br>
-            <input type='submit' name='act' value='register'>
-        </form>
+    <section class="form mx-5 my-4">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-5"><img src="..//images/login_page/login_image.jpg" alt="" class="img-fluid"></div>
+                <div class="col-lg-7 px-5 py-5">
+                    <h1 class="font-weight-bold py-4 px-3">Welcome to our webpage</h1>
+                    <h4 class="px-3">Register your account</h4>
+                    <form enctype='multipart/form-data' method='post' action='../process/register_process.php' class="registerForm">
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="text" name='role' value='customer' placeholder="Role" readonly class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input input type='text' id='username' name='username' required placeholder="Username" class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input input type='password' id='password' name='password' required placeholder="Password" class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input input type='file' name='image' placeholder="Image" class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input input type='text' id='name' name='name' required placeholder="Name" class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input input type='text' id='address' name='address' required placeholder="Address" class="form-control p-3 my-4 mx-3"> 
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <button input type='submit' name='act' value='register' class="login_btn p-3 mx-3">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     </main>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
 </html>
