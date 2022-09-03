@@ -1,3 +1,8 @@
+<header>
+        <?php 
+            include 'header.php';
+        ?>
+    </header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +47,8 @@
     </style> 
 </head>
 <body>
+
+
     <section class="form mx-5 my-4">
         <div class="container">
             <div class="row g-0">
