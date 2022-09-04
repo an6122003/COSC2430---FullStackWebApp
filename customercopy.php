@@ -21,9 +21,10 @@
                 <div class="col-lg-3 ">
                     <h2>Price Range</h2>
                     <form class="row" method="post" action="customercopy.php">
-                        <input type="number" name="minPrice" id="minPrice" class="col-lg-6" placeholder="Minimum Price">
-                        <input type="number" name="maxPrice" id="maxPrice" class="col-lg-6" placeholder="Maximum Price">
-                        <input type="submit" value="Submit">
+                        <input type="text" name="nameFilter" id="nameFilter" placeholder="Product Search">
+                        <input type="number" name="minPrice" id="minPrice" class="col-lg-6" placeholder="Min Price">
+                        <input type="number" name="maxPrice" id="maxPrice" class="col-lg-6" placeholder="Max Price">
+                        <input type="submit" name="submit" value="Submit">
                     </form>
                 </div>
                 <div class="col-lg-9 row">
@@ -57,39 +58,57 @@
                         
                         function displayProducts(){
                             $counter = 1;
+                            // loop to display products as individual divs
                             while ($counter <= count($_SESSION['products'])) {
                                 // getting all the variables
                                 $imageDir = $_SESSION['products'][$counter-1]['Image Dir'];
                                 $prodName = $_SESSION['products'][$counter-1]['Name'];
                                 $prodPrice = $_SESSION['products'][$counter-1]['Price'];
 
-                                if(isset($_POST['submit'])){
-                                    checkPrice();
-                                } 
-                                // price filter
-                                //if ($prodPrice>=$_SESSION['minPrice'] && $prodPrice<=$_SESSION['maxPrice']){
-                                    echo "<div class='productDisplay text-bg-light col-lg-4'>
-                                        <img src=$imageDir>
-                                        <p>$prodName</p>
-                                        <p>$prodPrice</p>
-                                    </div>";
+                                checkPrice();
+                                checkName();
+                                // compare filter price to item prices
+                                if ($prodPrice>=$_SESSION['minPrice'] && $prodPrice<=$_SESSION['maxPrice']){
+                                    if (str_contains($prodName, $_SESSION['nameFiltered']) && !empty($_SESSION['nameFiltered'])){
+                                        // display the products
+                                        echo "<div class='productDisplay text-bg-light col-lg-4 col-md-6 '>
+                                            <img src=$imageDir>
+                                            <p>$prodName</p>
+                                            <p>$prodPrice</p>
+                                        </div>";
+                                        $counter++;
+                                    }
+
+                                    elseif (empty($_SESSION['nameFiltered'])){
+                                        echo "<div class='productDisplay text-bg-light col-lg-4 col-md-6 '>
+                                            <img src=$imageDir>
+                                            <p>$prodName</p>
+                                            <p>$prodPrice</p>
+                                            bbb
+                                        </div>";
+                                        $counter++;
+                                    }
+
+                                    else{
+                                        $counter++;
+                                    }
+                                
+                                }
+                                else {
                                     $counter++;
-                                //}
-                                //else{
-                                    //$counter++;
-                                //}
+                                }
                             }
                         }
 
                         function checkPrice(){
-                            // check if min price is empty
-                            if (is_null($_POST['maxPrice'])){
-                                $maxPrice = 9999999;
+                            // check if price is empty
+                            if (empty($_POST['maxPrice'])){
+                                $maxPrice = 99999;
                             }
                             else{
                                 $maxPrice = $_POST['maxPrice'];
                             }
-                            if (is_null($_POST['minPrice'])){
+                            if (empty($_POST['minPrice'])){
                                 $minPrice = 0;
                             }
                             else{
@@ -98,6 +117,17 @@
                             $_SESSION['minPrice'] = $minPrice;
                             $_SESSION['maxPrice'] = $maxPrice;
                         }
+
+                        function checkName(){
+                            if (empty($_POST['nameFilter'])){
+                                $nameFiltered = '';
+                            }
+                            else{
+                                $nameFiltered = $_POST['nameFilter'];
+                            }
+                            $_SESSION['nameFiltered'] = $nameFiltered;
+                        }
+
                         displayProducts()
                     ?>
                 </div>
