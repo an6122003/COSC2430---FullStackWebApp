@@ -27,7 +27,7 @@
                                 <input type='submit' name='logout' value='Logout'>
                             </form>";
                     } else{
-                        echo '<li class="nav-item"><a class="nav-link" href="/login.php">Login</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>';
                     }
                 ?>
                 </ul>

@@ -43,29 +43,73 @@
         move_uploaded_file($_FILES['image']['tmp_name'], '../images/avatars/'.$fileName.'.png');
     }
 
+    function validateInput($username,$password,$businessName,$businessAddress,$cusName,$cusAddress){
+        $validated = true;
+
+        if(!preg_match("/^[a-zA-Z0-9]{8,15}$/", $username)){
+            $validated = false;
+            return $validated;
+        }
+        if(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,20}$/", $password)){
+            $validated = false;
+            return $validated;
+        }
+        if($businessName !== 'none'){
+            if(!preg_match("/^.{5,}$/", $businessName)){
+                $validated = false;
+                return $validated;
+            }
+        }
+        if($businessAddress !== 'none'){
+            if(!preg_match("/^.{5,}$/", $businessAddress)){
+                $validated = false;
+                return $validated;
+            }
+        }
+        if($cusName !== 'none'){
+            if(!preg_match("/^.{5,}$/", $cusName)){
+                $validated = false;
+                return $validated;
+            }
+        }
+        if($cusAddress !== 'none'){
+            if(!preg_match("/^.{5,}$/", $cusAddress)){
+                $validated = false;
+                return $validated;
+            }
+        }
+        return $validated;
+    }
+
     if (isset($_POST['act'])){
         $isUnique = checkUniqueness(1,'username');
         if ($isUnique == true){
             //store customer info
             if($_POST['role'] == 'customer'){
-                saveCustomerToFile();
-                saveAvatar();
-                header('location: ../register_roles.php?message=succeed');
+                if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', $_POST['name'], $_POST['address'])){
+                    saveCustomerToFile();
+                    saveAvatar();
+                    header('location: ../register_roles.php?message=succeed');
+                }
             }
             //store shipper info
             else if($_POST['role'] == 'shipper'){
-                saveShipperToFile();
-                saveAvatar();
-                header('location: ../register_roles.php?message=succeed');
+                if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', 'none', 'none')){
+                    saveShipperToFile();
+                    saveAvatar();
+                    header('location: ../register_roles.php?message=succeed');
+                }
             }
             //store vendor info
             else if($_POST['role'] == 'vendor'){
                 $uniBusinessName = checkUniqueness(3, 'businessName');
                 $uniBusinessAddress = checkUniqueness(4, 'businessAddress');
                 if ($uniBusinessName && $uniBusinessAddress){
-                    saveVendorToFile();
-                    saveAvatar();
-                    header('location: ../register_roles.php?message=succeed');
+                    if(validateInput($_POST['username'], $_POST['password'], $_POST['businessName'], $_POST['businessAddress'], 'none', 'none')){
+                        saveVendorToFile();
+                        saveAvatar();
+                        header('location: ../register_roles.php?message=succeed');
+                    }
                 } else{
                     header('location: ../register_fields/register_vendor.php?message=business_exist');
                 }
