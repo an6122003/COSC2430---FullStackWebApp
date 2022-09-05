@@ -51,9 +51,15 @@ if ($userInfo[0] == "shipper"){
                 </div>
             </div>
             <div class="form-group row">
+                <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
+                <div class="col-sm-3">
+                <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="distributionHub" class="col-sm-2 col-form-label">Distribution Hub:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="distributionHub" value="'.$userInfo[3].'">
+                <input type="text" readonly class="form-control" id="distributionHub" value="'.$userInfo[4].'">
                 </div>
             </div>
         </form>
@@ -80,15 +86,21 @@ if ($userInfo[0] == "customer"){
                 </div>
             </div>
             <div class="form-group row">
+                <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
+                <div class="col-sm-3">
+                <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="name" value="'.$userInfo[3].'">
+                <input type="text" readonly class="form-control" id="name" value="'.$userInfo[4].'">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="address" class="col-sm-2 col-form-label">Address:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="address" value="'.$userInfo[4].'">
+                <input type="text" readonly class="form-control" id="address" value="'.$userInfo[5].'">
                 </div>
             </div>
         </form>
@@ -115,15 +127,21 @@ if ($userInfo[0] == "vendor"){
                 </div>
             </div>
             <div class="form-group row">
+                <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
+                <div class="col-sm-3">
+                <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                </div>
+            </div>
+            <div class="form-group row">
                 <label for="businessName" class="col-sm-2 col-form-label">Business Name:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="businessName" value="'.$userInfo[3].'">
+                <input type="text" readonly class="form-control" id="businessName" value="'.$userInfo[4].'">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="businessAddress" class="col-sm-2 col-form-label">Business Address:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="businessAddress" value="'.$userInfo[4].'">
+                <input type="text" readonly class="form-control" id="businessAddress" value="'.$userInfo[5].'">
                 </div>
             </div>
         </form>
