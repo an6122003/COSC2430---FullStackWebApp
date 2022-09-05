@@ -5298,11 +5298,12 @@ textarea.form-control-lg {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  background-color: rgba(0,0,0,0.4);
 }
 
 .modal-dialog {
   position: relative;
-  width: auto;
+  width: 70%;
   margin: var(--bs-modal-margin);
   pointer-events: none;
 }

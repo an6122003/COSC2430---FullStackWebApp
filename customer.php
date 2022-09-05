@@ -7,7 +7,7 @@
     <meta name="group" content="31">
     <title>Customer Main</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/customer_modal.js"></script>
+    
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
     </header>
 
     <main>
-        <div class="container pt-100 pb-100">
+        <div class="container">
             <div class="row background">
                 <div class="col-lg-3 ">
                     <h2>Price Range</h2>
@@ -51,18 +51,21 @@
                                     $i++;
                                 }
 
+                                // check for min price
                                 if (isset($_POST['minPrice']) && is_numeric($_POST['minPrice'])) {
                                     if ($product['price'] < $_POST['minPrice']) {
                                         continue;
                                     }
                                 }
+
+                                // check for max price
                                 if (isset($_POST['maxPrice']) && is_numeric($_POST['maxPrice'])) {
                                     if ($product['price'] > $_POST['maxPrice']) {
                                         continue;
                                     }
                                 }
 
-
+                                // name search
                                 if (isset($_POST['nameFilter']) && !empty($_POST['nameFilter'])) {
                                     if (strpos($product['name'], $_POST['nameFilter']) === false) {
                                         continue;
@@ -70,26 +73,31 @@
                                 }
 
                                 // product display
-                                echo "<div class='productDisplay text-bg-light col-lg-4 col-md-6' id='" . $product['id'] . "'>
+                                echo "<div class='productDisplay text-bg-light col-lg-4 col-md-6 btn' id='btn" . $product['id'] . "'>
                                     <img src=" . $product['image_dir'] . ">
                                     <p class='fs-2'>" . $product['name'] . "</p>
                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                 </div>";
 
-                                // create modal box
-                                echo "<div id='" . $product['id'] . "' class='modal'>
-                                    <div class='modal-dialog'>
-                                        <div class='container pt-100 pb-100'>
-                                            <div class='row background'>
-                                            <span class='.btn-close'>&times;</span>
-                                                <div class='col-lg-8'>
-                                                    
+                                // modal box template
+                                echo "<div class='modal' id='modal" . $product['id'] . "'>
+                                    <div class='modal-dialog modal-xl '>
+                                        <div class='modal-content'>
+                                            <div class='modal-header'>
+                                                <button type='button' class='btn-close float-right' aria-label='Close'></button>
+                                            </div>
+                                            <div class='row'>
+                                            
+                                                <div class='col-lg-8 px-5'>
                                                     <img src=" . $product['image_dir'] . ">
                                                 </div>
-                                                <div class='col-lg-4'>
+                                                <div class='col-lg-4 px-5'>
                                                     <p class='fs-2'>" . $product['name'] . "</p>
                                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                                     <p class='fs-6'>" . $product['description'] . "</p>
+                                                    <div class='d-grid gap-2'>
+                                                        <button class='btn btn-secondary' type='button'>Add to Cart</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,13 +113,12 @@
                         readFromFile();
                         
                     ?>
+                    <!-- script to parse php value into js -->
                     <script type="text/javascript">
-                        console.log(count($_SESSION['products']));
-                        /* for (let i = 0; i < count($_SESSION['products']); i++) {
-                            text += cars[i] + "<br>";
-                        }
-                        var data = <?php echo json_encode("42", JSON_HEX_TAG); ?>; *>
+                        var prodCount = <?php echo count($_SESSION['products']); ?>;
                     </script>
+                    <!-- activate modal box js -->
+                    <script src="js/customer_modal.js"></script>
                 </div>
             </div>
         </div>
