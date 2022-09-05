@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input input type='file' name='image' placeholder="Image" class="form-control p-3 my-4 mx-3"> 
+                                <input input type='file' name='image' placeholder="Image" required class="form-control p-3 my-4 mx-3"> 
                             </div>
                         </div>
                         <div class="form-row">
