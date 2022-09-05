@@ -65,6 +65,8 @@
         $isLoggedin = checkLogin();
         if($isLoggedin){
             $_SESSION['loggedin'] = true;
+            $_SESSION['username'] = $_POST['username'];
+            // echo '<script type="text/javascript">alert("'.$_SESSION['username'].'");</script>';
             header ('location: index.php');
         } else{
             echo '<script>alert("Login failed, Incorrect username or password.")</script>';

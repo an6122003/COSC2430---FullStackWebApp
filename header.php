@@ -23,11 +23,13 @@
                     <?php 
                     if(isset($_SESSION['loggedin'])){
                         echo '<li class="nav-item"><a class="nav-link" href="/my_account.php">My Account</a></li>';
-                        echo"<form method='post' action='process/logout_process.php'>
-                                <input type='submit' name='logout' value='Logout'>
-                            </form>";
+                        echo"<li class='nav-item'> 
+                                <form method='post' action='process/logout_process.php'>
+                                    <button class='nav-link btn btn-link' type='submit' name='logout' value='Logout'>Log out</button>
+                                </form>
+                            </li>";
                     } else{
-                        echo '<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="/login.php">Login</a></li>';
                     }
                 ?>
                 </ul>
