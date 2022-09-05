@@ -54,6 +54,28 @@ if ($userInfo[0] == "shipper"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                <div class="modal fade" id="modal" >
+                    <div class="modal-dialog modal-dialog-centered" >
+                        <div class="modal-content">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
                 </div>
             </div>
             <div class="form-group row">
@@ -89,7 +111,28 @@ if ($userInfo[0] == "customer"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                <div class="modal fade" id="modal" >
+                    <div class="modal-dialog modal-dialog-centered" >
+                        <div class="modal-content">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -130,6 +173,28 @@ if ($userInfo[0] == "vendor"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
+                <div class="modal fade" id="modal" >
+                    <div class="modal-dialog modal-dialog-centered" >
+                        <div class="modal-content">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
                 </div>
             </div>
             <div class="form-group row">
