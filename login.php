@@ -1,8 +1,3 @@
-    <header>
-        <?php 
-            include 'header.php';
-        ?>
-    </header>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +10,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+<header>
+    <?php 
+        include 'header.php';
+    ?>
+</header>
 <body>
     <section class="form mx-5 my-4">
         <div class="container">
@@ -74,7 +74,7 @@
                     $_SESSION['role'] = $lineArray[0];
                 }
             }
-            header ('location: index.php');
+            header('location: index.php');
         } else{
             echo '<script>alert("Login failed, Incorrect username or password.")</script>';
         }

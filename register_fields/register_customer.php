@@ -17,7 +17,8 @@
         ?>
     </header>
     <main>
-    <section class="form mx-5 my-4">
+        <div class="validateMessage"></div>
+        <section class="form mx-5 my-4">
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-5"><img src="..//images/login_page/login_image.jpg" alt="" class="img-fluid"></div>
