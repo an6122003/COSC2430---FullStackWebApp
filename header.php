@@ -22,14 +22,14 @@
                     <li class="nav-item"><a class="nav-link" href="/index.php">About</a></li>
                     <?php 
                     if(isset($_SESSION['loggedin'])){
-                        echo '<li class="nav-item"><a class="nav-link" href="/my_account.php">My Account</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="my_account.php">My Account</a></li>';
                         echo"<li class='nav-item'> 
                                 <form method='post' action='process/logout_process.php'>
                                     <button class='nav-link btn btn-link' type='submit' name='logout' value='Logout'>Log out</button>
                                 </form>
                             </li>";
                     } else{
-                        echo '<li class="nav-item"><a class="nav-link" href="/login.php">Login</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>';
                     }
                 ?>
                 </ul>

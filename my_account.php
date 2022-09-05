@@ -32,33 +32,105 @@
         }
         fclose($file);
     }
-?>
-    <main>
+if ($userInfo[0] == "shipper"){
+    echo '<main>
     <div class = "container">
         <form>
-        <h1 class="font-weight-bold py-4 px-3">Hello <?php echo $_SESSION['username'] ?></h1>
+        <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
         <h4 class="px-3 py-4">Personal Information</h4>
             <div class="form-group row">
                 <label for="role" class="col-sm-2 col-form-label">Role:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="role" value="<?php echo $userInfo[0] ?>">
+                <input type="text" readonly class="form-control" id="role" value="' .$userInfo[0] .'">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="username" class="col-sm-2 col-form-label">Username:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="username" value="<?php echo $userInfo[1] ?>">
+                <input type="text" readonly class="form-control" id="username" value="'.$userInfo[1].'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="distributionHub" class="col-sm-2 col-form-label">Distribution Hub:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="distributionHub" value="'.$userInfo[3].'">
+                </div>
+            </div>
+        </form>
+    </div> 
+    </main>';
+}
+
+if ($userInfo[0] == "customer"){
+    echo '<main>
+    <div class = "container">
+        <form>
+        <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
+        <h4 class="px-3 py-4">Personal Information</h4>
+            <div class="form-group row">
+                <label for="role" class="col-sm-2 col-form-label">Role:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="role" value="' .$userInfo[0] .'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="username" value="'.$userInfo[1].'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="name" value="'.$userInfo[3].'">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="address" class="col-sm-2 col-form-label">Address:</label>
                 <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="address" value="<?php echo $userInfo[3] ?>">
+                <input type="text" readonly class="form-control" id="address" value="'.$userInfo[4].'">
                 </div>
             </div>
         </form>
     </div> 
-    </main>
+    </main>';
+}
+
+if ($userInfo[0] == "vendor"){
+    echo '<main>
+    <div class = "container">
+        <form>
+        <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
+        <h4 class="px-3 py-4">Personal Information</h4>
+            <div class="form-group row">
+                <label for="role" class="col-sm-2 col-form-label">Role:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="role" value="' .$userInfo[0] .'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="username" class="col-sm-2 col-form-label">Username:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="username" value="'.$userInfo[1].'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="businessName" class="col-sm-2 col-form-label">Business Name:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="businessName" value="'.$userInfo[3].'">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="businessAddress" class="col-sm-2 col-form-label">Business Address:</label>
+                <div class="col-sm-10">
+                <input type="text" readonly class="form-control" id="businessAddress" value="'.$userInfo[4].'">
+                </div>
+            </div>
+        </form>
+    </div> 
+    </main>';
+}
+?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

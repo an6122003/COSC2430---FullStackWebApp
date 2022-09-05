@@ -17,7 +17,8 @@
         ?>
     </header>
     <main>
-    <section class="form mx-5 my-4">
+        <div class="validateMessage"></div>
+        <section class="form mx-5 my-4">
         <div class="container">
             <div class="row g-0">
                 <div class="col-lg-5"><img src="..//images/login_page/login_image.jpg" alt="" class="img-fluid"></div>
@@ -42,7 +43,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input input type='file' name='image' placeholder="Image" class="form-control p-3 my-4 mx-3"> 
+                                <input input type='file' name='image' placeholder="Image" required class="form-control p-3 my-4 mx-3"> 
                             </div>
                         </div>
                         <div class="form-row">

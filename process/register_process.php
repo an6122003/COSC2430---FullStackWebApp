@@ -15,32 +15,23 @@
         return $check;
     }
 
-    function saveCustomerToFile(){
-        $file = fopen('../accounts.db',"a");
-        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['name'] . '@@@' . $_POST['address'] . PHP_EOL);
-        fclose($file);
-    }
-
-    function saveShipperToFile(){
-        $file = fopen('../accounts.db',"a");
-        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['distributionHub'] . PHP_EOL);
-        fclose($file);
-    }
-
-    function saveVendorToFile(){
-        $file = fopen('../accounts.db',"a");
-        fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $_POST['businessName'] . '@@@' . $_POST['businessAddress'] . PHP_EOL);
-        fclose($file);
-    }
-
-    function simplifyString($str){
-        $new_str = str_replace(' ', '_', strtolower($str));
-        return $new_str;
-    }
-    
     function saveAvatar(){
-        $fileName = simplifyString($_POST['username']);
+        $fileName = uniqid();
+        $path = 'images/avatars/'.$fileName.'.png';
         move_uploaded_file($_FILES['image']['tmp_name'], '../images/avatars/'.$fileName.'.png');
+        return $path;
+    }
+
+    function saveToFile($role,$imagePath){
+        $file = fopen('../accounts.db',"a");
+        if ($role == 'customer'){
+            fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $imagePath . '@@@' . $_POST['name'] . '@@@' . $_POST['address'] . PHP_EOL);
+        } else if ($role == 'shipper'){
+            fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $imagePath . '@@@' . $_POST['distributionHub'] . PHP_EOL);
+        } else if($role == 'vendor'){
+            fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $imagePath . '@@@' . $_POST['businessName'] . '@@@' . $_POST['businessAddress'] . PHP_EOL);
+        }
+        fclose($file);
     }
 
     function validateInput($username,$password,$businessName,$businessAddress,$cusName,$cusAddress){
@@ -87,27 +78,27 @@
             //store customer info
             if($_POST['role'] == 'customer'){
                 if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', $_POST['name'], $_POST['address'])){
-                    saveCustomerToFile();
-                    saveAvatar();
+                    $avatarPath = saveAvatar();
+                    saveToFile($_POST['role'], $avatarPath);
                     header('location: ../register_roles.php?message=succeed');
                 }
             }
             //store shipper info
             else if($_POST['role'] == 'shipper'){
                 if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', 'none', 'none')){
-                    saveShipperToFile();
-                    saveAvatar();
+                    $avatarPath = saveAvatar();
+                    saveToFile($_POST['role'], $avatarPath);
                     header('location: ../register_roles.php?message=succeed');
                 }
             }
             //store vendor info
             else if($_POST['role'] == 'vendor'){
-                $uniBusinessName = checkUniqueness(3, 'businessName');
-                $uniBusinessAddress = checkUniqueness(4, 'businessAddress');
+                $uniBusinessName = checkUniqueness(4, 'businessName');
+                $uniBusinessAddress = checkUniqueness(5, 'businessAddress');
                 if ($uniBusinessName && $uniBusinessAddress){
                     if(validateInput($_POST['username'], $_POST['password'], $_POST['businessName'], $_POST['businessAddress'], 'none', 'none')){
-                        saveVendorToFile();
-                        saveAvatar();
+                        $avatarPath = saveAvatar();
+                        saveToFile($_POST['role'], $avatarPath);
                         header('location: ../register_roles.php?message=succeed');
                     }
                 } else{
