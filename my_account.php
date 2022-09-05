@@ -1,24 +1,3 @@
-<?php 
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-    $user = $_SESSION['username'];
-    $userInfo = [];
-    if ($file = fopen("accounts.db", "r")) {
-        while(!feof($file)) {
-            $line = fgets($file);
-            $temp = explode('@@@',$line);
-
-            if ($user == $temp[1]){
-                $userInfo = $temp;
-                // print_r($userInfo);
-                break;
-            }
-        }
-        fclose($file);
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +16,23 @@
             include_once('header.php'); 
         ?>
     </header>
+    <?php
+    $user = $_SESSION['username'];
+    $userInfo = [];
+    if ($file = fopen("accounts.db", "r")) {
+        while(!feof($file)) {
+            $line = fgets($file);
+            $temp = explode('@@@',$line);
+
+            if ($user == $temp[1]){
+                $userInfo = $temp;
+                // print_r($userInfo);
+                break;
+            }
+        }
+        fclose($file);
+    }
+?>
     <main>
     <div class = "container">
         <form>
