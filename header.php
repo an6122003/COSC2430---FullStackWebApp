@@ -18,10 +18,18 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button> <!--tag for responsive navbar bootstrap-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto"> <!--auto margin-->
-                    <li class="nav-item"><a class="nav-link"href="/index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/index.php">About</a></li>
+                    <li class="nav-item"><a class="nav-link"href="index.php">Home</a></li>
                     <?php 
                     if(isset($_SESSION['loggedin'])){
+                        if (isset($_SESSION['role']) && $_SESSION['role'] == 'customer'){
+                            echo "<li class='nav-item'><a class='nav-link' href='customer.php'>Platform</a></li>";
+                        }
+                        if (isset($_SESSION['role']) && $_SESSION['role'] == 'vendor'){
+                            echo "<li class='nav-item'><a class='nav-link' href='vedor.php'>View products</a></li>";
+                        }
+                        if (isset($_SESSION['role']) && $_SESSION['role'] == 'shipper'){
+                            echo "<li class='nav-item'><a class='nav-link' href='shipper.php'>View orders</a></li>";
+                        }
                         echo '<li class="nav-item"><a class="nav-link" href="my_account.php">My Account</a></li>';
                         echo"<li class='nav-item'> 
                                 <form method='post' action='process/logout_process.php'>

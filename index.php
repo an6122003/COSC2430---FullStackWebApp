@@ -17,7 +17,13 @@
 
     <main>
         <h1>Welcome to our wesite</h1>
-        <p>Haven't had account? Register <a href="register_roles.php">here</a>.</p>
+        <?php 
+            if (isset($_SESSION['loggedin'])){
+                echo "<p>Logged in ! Experience yourself..</p>";
+            } else {
+                echo "<p>Have not had account? Register <a href='register_roles.php'>here</a>.</p>";
+            }
+        ?>
     </main>
 
     <footer>
