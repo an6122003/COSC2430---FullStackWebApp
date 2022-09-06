@@ -16,9 +16,16 @@
         ?>
     </header>
 
+    <script>
+
+    </script>
     <main>
         <div class="container">
             <div class="row background">
+                <?php
+                    $cartProductsId='<script type="text/javascript">document.write(localStorage.getItem("data"););</script>';
+                    echo $cartProductsId;
+                ?>
                 <div class="col-lg-2">
 
                 </div>

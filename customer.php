@@ -82,7 +82,7 @@
                                     <div class='modal-dialog modal-xl '>
                                         <div class='modal-content'>
                                             <div class='modal-header'>
-                                                <button type='button' class='btn-close' id='closeBtn'" . $product['id'] . " aria-label='Close'></button>
+                                                <button type='button' class='btn-close' id='closeBtn'" . $product['id'] . "></button>
                                             </div>
                                             <div class='row px-5 py-5'>
                                             
