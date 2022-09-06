@@ -15,12 +15,7 @@
         return $check;
     }
 
-    function saveAvatar(){
-        $fileName = uniqid();
-        $path = 'images/avatars/'.$fileName.'.png';
-        move_uploaded_file($_FILES['image']['tmp_name'], '../images/avatars/'.$fileName.'.png');
-        return $path;
-    }
+    include 'avatar_process.php';
 
     function saveToFile($role,$imagePath){
         $file = fopen('../accounts.db',"a");

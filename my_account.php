@@ -17,6 +17,11 @@
         ?>
     </header>
     <?php
+        if(!isset($_SESSION['loggedin'])){
+            header('location: login.php');
+        }
+    ?>
+    <?php
     $user = $_SESSION['username'];
     $userInfo = [];
     if ($file = fopen("accounts.db", "r")) {
@@ -35,7 +40,6 @@
 if ($userInfo[0] == "shipper"){
     echo '<main>
     <div class = "container">
-        <form>
         <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
         <h4 class="px-3 py-4">Personal Information</h4>
             <div class="form-group row">
@@ -65,7 +69,10 @@ if ($userInfo[0] == "shipper"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="image">
+                                        <input type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -84,7 +91,6 @@ if ($userInfo[0] == "shipper"){
                 <input type="text" readonly class="form-control" id="distributionHub" value="'.$userInfo[4].'">
                 </div>
             </div>
-        </form>
     </div> 
     </main>';
 }
@@ -92,7 +98,6 @@ if ($userInfo[0] == "shipper"){
 if ($userInfo[0] == "customer"){
     echo '<main>
     <div class = "container">
-        <form>
         <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
         <h4 class="px-3 py-4">Personal Information</h4>
             <div class="form-group row">
@@ -122,7 +127,10 @@ if ($userInfo[0] == "customer"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="image">
+                                        <input type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -146,7 +154,6 @@ if ($userInfo[0] == "customer"){
                 <input type="text" readonly class="form-control" id="address" value="'.$userInfo[5].'">
                 </div>
             </div>
-        </form>
     </div> 
     </main>';
 }
@@ -154,7 +161,6 @@ if ($userInfo[0] == "customer"){
 if ($userInfo[0] == "vendor"){
     echo '<main>
     <div class = "container">
-        <form>
         <h1 class="font-weight-bold py-4 px-3">Hello '.$_SESSION['username'] . '</h1>
         <h4 class="px-3 py-4">Personal Information</h4>
             <div class="form-group row">
@@ -184,7 +190,10 @@ if ($userInfo[0] == "vendor"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
+                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                        <input type="file" name="image">
+                                        <input type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -209,11 +218,11 @@ if ($userInfo[0] == "vendor"){
                 <input type="text" readonly class="form-control" id="businessAddress" value="'.$userInfo[5].'">
                 </div>
             </div>
-        </form>
     </div> 
     </main>';
 }
 ?>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
