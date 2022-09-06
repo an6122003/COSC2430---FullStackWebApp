@@ -1,11 +1,11 @@
 var modal = [];
 var btn = [];
-var closeBtn = document.getElementsByClassName("btn-close")[0];
 
 for (let i = 1; i < prodCount + 1; i++) {
     // get modal div and product div of all the products
     modal[i] = document.getElementById("modal" + i);
     btn[i] = document.getElementById("btn" + i);
+    var closeBtn = document.getElementsByClassName("btn-close")[i-1];
 
     // event listener of the buttons
     btn[i].addEventListener('click', showModal);

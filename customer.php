@@ -84,7 +84,7 @@
                                     <div class='modal-dialog modal-xl '>
                                         <div class='modal-content'>
                                             <div class='modal-header'>
-                                                <button type='button' class='btn-close float-right' aria-label='Close'></button>
+                                                <button type='button' class='btn-close' id='closeBtn'" . $product['id'] . " aria-label='Close'></button>
                                             </div>
                                             <div class='row'>
                                             
@@ -96,7 +96,7 @@
                                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                                     <p class='fs-6'>" . $product['description'] . "</p>
                                                     <div class='d-grid gap-2'>
-                                                        <button class='btn btn-secondary' type='button'>Add to Cart</button>
+                                                        <button class='btn btn-secondary' id='cart" . $product['id'] . "' type='button'>Add to Cart</button>
                                                     </div>
                                                 </div>
                                             </div>
