@@ -71,12 +71,11 @@ if ($userInfo[0] == "shipper"){
                                 <div class="modal-body">
                                     <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
                                         <input type="file" name="image">
-                                        <input type="submit" value="Save changes" name="change">
-                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -128,13 +127,12 @@ if ($userInfo[0] == "customer"){
                                 </div>
                                 <div class="modal-body">
                                     <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="image">
-                                        <input type="submit" value="Save changes" name="change">
-                                    </form>
+                                        <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -192,12 +190,11 @@ if ($userInfo[0] == "vendor"){
                                 <div class="modal-body">
                                     <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
                                         <input type="file" name="image">
-                                        <input type="submit" value="Save changes" name="change">
-                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    </form>
                                 </div>
                             </div>
                         </div>
