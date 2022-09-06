@@ -1231,7 +1231,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 992px) {
   .col-lg {
     flex: 1 0 0%;
   }
@@ -10922,4 +10922,22 @@ textarea.form-control-lg {
 
 .productDisplay p{
     text-align: center;
+}
+
+@media (min-width: 1024px){
+  .colSplit{
+    width: 33.3333333333%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .colSplit{
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px){
+  .colSplit{
+    width: 100%;
+  }
 }

@@ -28,10 +28,8 @@
                         <input type="submit" name="submit" value="Submit">
                     </form>
                 </div>
-                <div class="col-lg-9 row">
+                <div class="col-lg-9">
                     <?php
-                        $currentDir=__DIR__;
-
                         function readFromFile(){
                             $file_name = 'products.csv';
                             $fp = fopen($file_name, 'r');
@@ -73,7 +71,7 @@
                                 }
 
                                 // product display
-                                echo "<div class='productDisplay text-bg-light col-lg-4 col-md-6 btn' id='btn" . $product['id'] . "'>
+                                echo "<div class='productDisplay text-bg-light colSplit btn' id='btn" . $product['id'] . "'>
                                     <img src=" . $product['image_dir'] . ">
                                     <p class='fs-2'>" . $product['name'] . "</p>
                                     <p class='fs-4'>$" . $product['price'] . "</p>
@@ -114,9 +112,14 @@
                         
                     ?>
 
-                    <!-- script to parse php value into js -->
                     <script type="text/javascript">
+                        /* script to parse php value into js */
                         var prodCount = <?php echo count($_SESSION['products']); ?>;
+
+                        /* script to prevent form resubmission */
+                        if ( window.history.replaceState ) {
+                            window.history.replaceState( null, null, window.location.href );
+                        }
                     </script>
                     <!-- activate modal box js -->
                     <script src="js/customer_modal.js"></script>
