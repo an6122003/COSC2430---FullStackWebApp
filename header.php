@@ -33,9 +33,11 @@
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="submit">
                         Cart
-                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        <span id="cartCounter" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                     </button>
                 </form>
+                <!-- activate cart adding script -->
+                <script src="js/customer_cart.js"></script>
             </div>
         </div>
     </nav>

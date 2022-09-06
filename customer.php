@@ -86,12 +86,12 @@
                                             <div class='modal-header'>
                                                 <button type='button' class='btn-close' id='closeBtn'" . $product['id'] . " aria-label='Close'></button>
                                             </div>
-                                            <div class='row'>
+                                            <div class='row px-5 py-5'>
                                             
-                                                <div class='col-lg-8 px-5'>
+                                                <div class='col-lg-8'>
                                                     <img src=" . $product['image_dir'] . ">
                                                 </div>
-                                                <div class='col-lg-4 px-5'>
+                                                <div class='col-lg-4'>
                                                     <p class='fs-2'>" . $product['name'] . "</p>
                                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                                     <p class='fs-6'>" . $product['description'] . "</p>
@@ -113,12 +113,15 @@
                         readFromFile();
                         
                     ?>
+
                     <!-- script to parse php value into js -->
                     <script type="text/javascript">
                         var prodCount = <?php echo count($_SESSION['products']); ?>;
                     </script>
                     <!-- activate modal box js -->
                     <script src="js/customer_modal.js"></script>
+                    <!-- activate cart adding script -->
+                    <script src="js/customer_cart.js"></script>
                 </div>
             </div>
         </div>

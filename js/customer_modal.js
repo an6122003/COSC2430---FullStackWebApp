@@ -1,6 +1,7 @@
 var modal = [];
 var btn = [];
 
+
 for (let i = 1; i < prodCount + 1; i++) {
     // get modal div and product div of all the products
     modal[i] = document.getElementById("modal" + i);
@@ -13,13 +14,13 @@ for (let i = 1; i < prodCount + 1; i++) {
     window.addEventListener('click', clickOut);
 
     // functions to show and close modal
-    function showModal() {
+    function showModal(){
         modal[i].style.display = "block";
     }
-    function closeModal() {
+    function closeModal(){
         modal[i].style.display = "none";
     }
-    function clickOut(event) {
+    function clickOut(event){
         if (event.target == modal[i]) {
         modal[i].style.display = "none";
         }
