@@ -1,14 +1,23 @@
-var cartBtn = [];
+var cartNum = [];
 var cartClickedBool = new Array(prodCount);
 var cartItems = [];
+//var cartNumberItems =0 ;
 
 for (let i = 1; i < prodCount + 1; i++) {
-    cartBtn[i] = document.getElementById("cart" + i);
-    cartBtn[i].addEventListener('click', addToCounter);
+    cartNum[i] = document.getElementById("cart" + i);
+    cartNum[i].addEventListener('click', addToCounter);
     function addToCounter(){
-        document.getElementById("cartCounter").innerHTML = parseInt(document.getElementById("cartCounter").innerHTML) + 1;
-        cartItems[i-1] = i;
-        cartBtn[i].removeEventListener('click', addToCounter);
+        cartItems.push(i);
+        cartNumberItems++;
+        cartNum[i].removeEventListener('click', addToCounter);
         localStorage.setItem("data", cartItems);
+        //localStorage.setItem("cartNumberItems", cartNumberItems);
+        update();
     }
 }
+
+//function update(){
+    //document.getElementById("cartCounter").innerHTML = localStorage.getItem("cartNumberItems");
+//}
+
+//update();
