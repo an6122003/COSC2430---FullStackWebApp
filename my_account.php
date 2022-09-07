@@ -58,30 +58,29 @@ if ($userInfo[0] == "shipper"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
-                <div class="modal fade" id="modal" >
+                <div class="modal" id="modal" >
                     <div class="modal-dialog modal-dialog-centered" >
                         <div class="modal-content">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+                                    <button id="close_modal_btn" type="button" class="close" aria-label="Close Modal">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="image">
+                                        <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change" aria-label="Close Modal">
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
+                <button id ="open_modal_btn" type="button" class="btn btn-dark login_btn">Change Profile Picture</button>
                 </div>
             </div>
             <div class="form-group row">
@@ -115,13 +114,13 @@ if ($userInfo[0] == "customer"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
-                <div class="modal fade" id="modal" >
+                <div class="modal" id="modal" >
                     <div class="modal-dialog modal-dialog-centered" >
                         <div class="modal-content">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+                                    <button id="close_modal_btn" type="button" class="close" aria-label="Close Modal">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -130,15 +129,14 @@ if ($userInfo[0] == "customer"){
                                         <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change" aria-label="Close Modal">
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
+                <button id ="open_modal_btn" type="button" class="btn btn-dark login_btn">Change Profile Picture</button>
             </div>
             <div class="form-group row">
                 <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -177,30 +175,29 @@ if ($userInfo[0] == "vendor"){
                 <label for="image" class="col-sm-2 col-form-label">Profile Image:</label>
                 <div class="col-sm-3">
                 <img id= "image" class= "img-thumbnail" src="'.$userInfo[3].'"></img>
-                <div class="modal fade" id="modal" >
+                <div class="modal" id="modal" >
                     <div class="modal-dialog modal-dialog-centered" >
                         <div class="modal-content">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close Modal">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+                                    <button id="close_modal_btn" type="button" class="close" aria-label="Close Modal">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="image">
+                                        <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change">
+                                    <input class="btn btn-primary" type="submit" value="Save changes" name="change" aria-label="Close Modal">
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#modal" class="btn btn-dark login_btn">Change Profile Picture</button>
+                <button id ="open_modal_btn" type="button" class="btn btn-dark login_btn">Change Profile Picture</button>
                 </div>
             </div>
             <div class="form-group row">
@@ -219,7 +216,29 @@ if ($userInfo[0] == "vendor"){
     </main>';
 }
 ?>
+<script>
+    // event listener of the buttons
+    var modal = document.getElementById("modal");
+    var btn = document.getElementById('open_modal_btn');
+    var closeBtn = document.getElementById('close_modal_btn')
+    btn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', clickOut);
 
+    // functions to show and close modal
+    function showModal(){
+        modal.style.display = "block";
+    }
+    function closeModal(){
+        modal.style.display = "none";
+    }
+    function clickOut(event){
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+</script>
+    <script src="js/my_account_modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

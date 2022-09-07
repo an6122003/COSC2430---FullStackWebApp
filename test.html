@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../js/register_customer.js"></script>
+</head>
+
+<body>
+    <div class="modal" id="modal" >
+        <div class="modal-dialog modal-dialog-centered" >
+            <div class="modal-content">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Change profile picture</h5>
+                        <button id="close_modal_btn" type="button" class="close" aria-label="Close Modal">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="image">                                  
+                    </div>
+                    <div class="modal-footer">
+                        <input class="btn btn-primary" type="submit" value="Save changes" name="change" aria-label="Close Modal">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id ="open_modal_btn" type="button" class="btn btn-dark login_btn">Change Profile Picture</button>
+</body>
+<script>
+    // event listener of the buttons
+    var modal = document.getElementById("modal");
+    var btn = document.getElementById('open_modal_btn');
+    var closeBtn = document.getElementById('close_modal_btn')
+    btn.addEventListener('click', showModal);
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', clickOut);
+
+    // functions to show and close modal
+    function showModal(){
+        modal.style.display = "block";
+    }
+    function closeModal(){
+        modal.style.display = "none";
+    }
+    function clickOut(event){
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+</script>
+</html>
