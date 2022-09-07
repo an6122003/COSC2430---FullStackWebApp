@@ -7393,6 +7393,10 @@ textarea.form-control-lg {
   max-height: 100% !important;
 }
 
+.vh-15 {
+  height: 15vh !important;
+}
+
 .vh-100 {
   height: 100vh !important;
 }
@@ -10940,4 +10944,8 @@ textarea.form-control-lg {
   .colSplit{
     width: 100%;
   }
+}
+
+.cartBoxes{
+  display: none;
 }
