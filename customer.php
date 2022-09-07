@@ -124,7 +124,7 @@
                     <!-- activate modal box js -->
                     <script src="js/customer_modal.js"></script>
                     <!-- activate cart adding script -->
-                    <script src="js/customer_cart.js"></script>
+                    <script src="js/customer_cart_icon.js"></script>
                 </div>
             </div>
         </div>

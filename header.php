@@ -52,7 +52,7 @@
                     
 
                 <!-- activate cart adding script -->
-                <script src="js/customer_cart.js"></script>
+                <script src="js/customer_cart_icon.js"></script>
             </div>
         </div>
     </nav>
