@@ -1,7 +1,8 @@
 <?php 
+    session_start();
     function addProduct(){
         $file = fopen("products.csv","a");
-        fputcsv($file, array(count(file('products.csv')), $_POST['username'], $_POST['name'], $_POST['price'], 'images/products/'.count(file('products.csv')).'.png', $_POST['description']), ",");
+        fputcsv($file, array(count(file('products.csv')), $_SESSION['username'], $_POST['name'], $_POST['price'], 'images/products/'.count(file('products.csv')).'.png', $_POST['description']), ",");
         fclose($file);
     }
 
@@ -12,6 +13,6 @@
     if (isset($_POST['addP'])){
         saveImage();
         addProduct();
-        header('location: ../vendor.php');
+        header('location: vendor.php');
     }
 ?>

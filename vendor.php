@@ -1,3 +1,9 @@
+<header>
+    <?php 
+        include 'header.php';
+    ?>
+</header>
+
  <?php 
 $file = fopen("products.csv","r");
 $data = fgetcsv($file, 1000,",");
@@ -6,7 +12,7 @@ while( ($data = fgetcsv($file, 1000,",")) !==FALSE )
 
 
 
-    if ($data[1]=='Apple' //$_POST['username']
+    if ($data[1]==$_SESSION['username']
     )
 
 
@@ -26,11 +32,6 @@ fclose($file);
     <link rel="stylesheet" href="css/bootstrap.css">    
 </head>
 <body>
-    <header>
-        <?php 
-            include 'header.php';
-        ?>
-    </header>
 
     <main>
         <section class='form'>
@@ -45,7 +46,7 @@ fclose($file);
             <div class='row background'>
                 <div class='col-lg-8'>
                     <h2>My Products</h2>
-                    <p style='text-align:right'>Total: 2 <?php //echo count($all_data)?></p>
+                    <p style='text-align:right'>Total: <?php echo count($all_data)?></p>
                     <table class='table'>
                         <theader>
                             <th>ID</th>

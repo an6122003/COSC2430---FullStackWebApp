@@ -33,10 +33,10 @@
               echo count(file('products.csv'));
               ?> 
               <br>
-              Name: <input type='text' name='name'> <br>
-              Price: <input type='text' id='price' name='price'> <br>
-              Image: <input type='file' name='image'> <br>
-              Description: <input type='text' name='description' id='description'> <br>
+              Name: <input type='text' name='name' required> <br>
+              Price: <input type='text' id='price' name='price' required> <br>
+              Image: <input type='file' name='image' required> <br>
+              Description: <input type='text' name='description' id='description' required> <br>
               <input type='submit' name='addP' value='Save and Add'>
               <input type="button" value="Cancel" onclick="history.back()">
           </form>

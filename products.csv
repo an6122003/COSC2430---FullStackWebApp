@@ -4,3 +4,7 @@ id,vendor,name,price,image_dir,description
 3,Dell,XPS,1300,images/products/3.png,"Take on anything, anywhere with the XPS 13 2-in-1. From work to learning to life, use it as a laptop, sketch pad, or for video calls and streaming."
 4,Blah,blahblah,50000,images/products/4.png,"This is the description for this product"
 5,Apple,Iphone 18,3000,images/products/5.png,"This is the description for this product"
+6,Vendor123,phone,100,images/products/6.png,loloo
+7,Vendor123,phone,100,images/products/7.png,loloo
+8,Vendor123,tv,100,images/products/8.png,tv
+9,Vendor123,abc,200,images/products/9.png,ololo
