@@ -25,7 +25,7 @@
                             echo "<li class='nav-item'><a class='nav-link' href='customer.php'>Platform</a></li>";
                         }
                         if (isset($_SESSION['role']) && $_SESSION['role'] == 'vendor'){
-                            echo "<li class='nav-item'><a class='nav-link' href='vedor.php'>View products</a></li>";
+                            echo "<li class='nav-item'><a class='nav-link' href='vendor.php'>View products</a></li>";
                         }
                         if (isset($_SESSION['role']) && $_SESSION['role'] == 'shipper'){
                             echo "<li class='nav-item'><a class='nav-link' href='shipper.php'>View orders</a></li>";
