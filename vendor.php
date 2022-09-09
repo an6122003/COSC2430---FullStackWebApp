@@ -12,7 +12,7 @@ while( ($data = fgetcsv($file, 1000,",")) !==FALSE )
 
 
 
-    if ($data[1]==$_SESSION['username']
+    if ($data[1]=='Apple'//$_SESSION['username']
     )
 
 
@@ -39,12 +39,12 @@ fclose($file);
 
 
 
-                <h1> Vendor: <?php $_SESSION['username']?> </h1>
+                <h1> Vendor: Apple <?php //$_SESSION['username']?> </h1>
 
 
 
             <div class='row background'>
-                <div class='col-lg-8'>
+                <div class='col-lg-10'>
                     <h2>My Products</h2>
                     <p style='text-align:right'>Total: <?php echo count($all_data)?></p>
                     <table class='table'>
@@ -60,13 +60,13 @@ fclose($file);
                             <td><?=$rec[0] ?></td>
                             <td><?=$rec[2] ?></td>
                             <td><?=$rec[3] ?></td>
-                            <td><a href=#>see more</a></td>
+                            <td><a class='Psee' href=#>see details</a></td>
                         </tbody>
                         <?php } ?>
                     </table>
                 </div>
-                <div class="col-lg-3">
-                    <button><a href="vendor_add.php"><h3>+ Add new product</h3></a></button>
+                <div class="col-lg-2">
+                    <button class='addPbutton'><a class='btnA' href="vendor_add.php"><h1>+</h1><h4>New product</h4></a></button>
                 </div>
             </div>
         </div>

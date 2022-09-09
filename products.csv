@@ -1,4 +1,4 @@
-id,vendor,name,price,image_dir,description
+﻿id,vendor,name,price,image_dir,description
 1,Apple,Iphone,1000,images/products/1.png,"6.7-inch Super Retina XDR display with ProMotion"
 2,Sony,Bravia TV,2000,images/products/2.png,"Intelligent TV processing technology with Cognitive Processor XR that delivers natural and realistic picture quality"
 3,Dell,XPS,1300,images/products/3.png,"Take on anything, anywhere with the XPS 13 2-in-1. From work to learning to life, use it as a laptop, sketch pad, or for video calls and streaming."
