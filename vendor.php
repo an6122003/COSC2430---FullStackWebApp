@@ -9,14 +9,7 @@ $file = fopen("products.csv","r");
 $data = fgetcsv($file, 1000,",");
 $all_data = [];
 while( ($data = fgetcsv($file, 1000,",")) !==FALSE )
-
-
-
-    if ($data[1]=='Apple'//$_SESSION['username']
-    )
-
-
-
+    if ($data[1]==$_SESSION['username'])
 {$all_data[] = $data;}
 fclose($file);
 ?>
@@ -28,50 +21,55 @@ fclose($file);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="group" content="31">
-    <title>Vendor main: View my products</title>
-    <link rel="stylesheet" href="css/bootstrap.css">    
+    <title>Vendor: View my products</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 
     <main>
         <section class='form'>
-        <div class='container'>
+            <div class='container'>
+                <h1> Vendor: <?php $_SESSION['username']?> </h1>
+                <div class='row background'>
+                    <div class='col-lg-10'>
+                        <h2>My Products</h2>
+                        <p style='text-align:right'>Total: <?php echo count($all_data)?></p>
+                        <table class='table'>
+                            <theader>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th></th>
+                            </theader>
+                            <?php
+                            foreach ($all_data as $rec){ ?>
+                            <tbody>
+                                <td class="id"><?=$rec[0] ?></td>
+                                <td class="name"><?=$rec[2] ?></td>
+                                <td class="price"><?=$rec[3] ?></td>
+                                <td>
+                                    <div><img class="img" src="<?=$rec[4] ?>" alt="#" style="display:none"></div>
+                                    <div class="description" style="display:none"><?=$rec[5] ?></div>
+                                    <button class='btnDetail'>see details</button>
+                                </td>
+                            </tbody>
+                            <?php } ?>
+                        </table>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class='addPbutton'><a class='btnA' href="vendor_add.php"><h1>+</h1><h4>New product</h4></a></button>
+                    </div>
 
-
-
-                <h1> Vendor: Apple <?php //$_SESSION['username']?> </h1>
-
-
-
-            <div class='row background'>
-                <div class='col-lg-10'>
-                    <h2>My Products</h2>
-                    <p style='text-align:right'>Total: <?php echo count($all_data)?></p>
-                    <table class='table'>
-                        <theader>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th></th>
-                        </theader>
-                        <?php
-                        foreach ($all_data as $rec){ ?>
-                        <tbody>
-                            <td><?=$rec[0] ?></td>
-                            <td><?=$rec[2] ?></td>
-                            <td><?=$rec[3] ?></td>
-                            <td><a class='Psee' href=#>see details</a></td>
-                        </tbody>
-                        <?php } ?>
-                    </table>
-                </div>
-                <div class="col-lg-2">
-                    <button class='addPbutton'><a class='btnA' href="vendor_add.php"><h1>+</h1><h4>New product</h4></a></button>
+                    <div class="popup" id="pop">
+                    </div>       
+                        
                 </div>
             </div>
-        </div>
         </section>
-    </main>
+
+        <script src="js/vendor_popup.js"></script>
+
+    </main>       
 
     <footer>
         <?php 
