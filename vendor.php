@@ -39,7 +39,7 @@ fclose($file);
 
 
 
-                <h1> Vendor: Apple <?php //echo $_POST['username']?> </h1>
+                <h1> Vendor: <?php $_SESSION['username']?> </h1>
 
 
 
