@@ -36,7 +36,7 @@
                         echo "
                             <div id=box" . $product['id'] . " class='align-items-center background cartBoxes'>
                                 <div class='col-lg-4'>
-                                    <img alt=image of " . $product['name'] . " src=../" . $product['image_dir'] . ">
+                                    <img alt='image of " . $product['name'] . "' src=../" . $product['image_dir'] . ">
                                 </div>
                                 <div class='col-lg-4'>
                                     <p class='fs-2'>" . $product['name'] . "</p>
