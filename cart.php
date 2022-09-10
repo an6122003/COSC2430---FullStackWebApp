@@ -53,22 +53,36 @@
                         $products[] = $product;
                     }
                     $_SESSION['products'] = $products;  
+
+                    function getCusAddress(){
+                        $address = '';
+                        if (isset($_SESSION['username'])){
+                            $lines = file('accounts.db');
+                            foreach($lines as $line){
+                                $lineArray = explode('@@@', $line);
+                                if($lineArray[1] == $_SESSION['username']){
+                                    $address = $lineArray[5];
+                                }
+                            }
+                        }
+                        $_SESSION['cusAddress'] = $address;
+                    }
+
+
                 ?>
                 <div class="background">
-                    <form>
-                        <?php 
-                        echo count(file('products.csv'));
-                        ?> 
-                        <br>
-                        Name: <input type='text' name='name'> <br>
-                        Price: <input type='text' id='price' name='price'> <br>
-                        Image: <input type='file' name='image'> <br>
-                        Description: <input type='text' name='description' id='description'> <br>
-                        <input type='submit' name='addP' value='Save and Add'>
-                        <input type="button" value="Cancel" onclick="history.back()">
+                    <form enctype='multipart/form-data' method='post' action='cart_add_order.php'>
+                         
+                        orderId <input type='number' id='orderId' name='orderId' value='<?php echo count(file("order.csv"))?>'>
+                        hubId <input type='number' id='hubId' name='hubId'>
+                        productIds <input type='text' id='productIds' name='productIds'>
+                        totalPrice <input type='text' id='totalPrice' name='totalPrice'>
+                        address <input type='text' id='address' name='address' value='<?php echo $_SESSION["cusAddress"]?>'>
+                        status <input type='text' id='status' name='status'>
+
                         <span class="fs-2">Total Price: $</span>
                         <span class="fs-2" id="priceField">0</span>
-                        <button class='btn btn-secondary float-end' type='button'>Add to Cart</button>
+                        <button class='btn btn-secondary float-end' type='submit'>Submit order</button>
                     </form>
                     
                 </div>             
@@ -80,6 +94,7 @@
         </script> 
         <script src="js/customer_cart.js"></script>
         <script src="js/customer_cart_icon.js"></script>
+        <script src="js/customer_order_submit.js"></script>
     </main>
 
     <footer>

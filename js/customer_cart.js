@@ -3,11 +3,10 @@ var box = [];
 var del = [];
 var price = [];
 var priceField = document.getElementById("priceField");
-var cartNumberItems = Number(localStorage.getItem("cartNumberItems")) || 0;
-
+var randomHubId = Math.floor(Math.random() * 3) + 1;
 var totalPrice = 0;
 
-for (let i = 1; i < prodCount + 1; i++) {
+for (let i = 1; i < prodCount + 1; i++){
     // get modal div and product div of all the products
     box[i] = document.getElementById("box" + i);
     del[i] = document.getElementById("del" + i);
@@ -28,16 +27,16 @@ for (let i = 1; i < prodCount + 1; i++) {
                 
                 // update total price
                 totalPrice -= price[cartProductsID[j]];
-                updatePriceField()
-
-                // update cart number
-                cartNumberItems -= 1;
-                localStorage.setItem("cartNumberItems", cartNumberItems);
-                update();
+                updatePriceField();
+                
 
                 // remove item from cart in local storage
                 cartProductsID.splice(j, 1);
                 localStorage.setItem("data", JSON.stringify(cartProductsID));
+
+                // update cart number
+                update();
+                fillForm();
             }
         }
     }
@@ -45,9 +44,15 @@ for (let i = 1; i < prodCount + 1; i++) {
 }
 
 function updatePriceField(){
-    priceField.innerHTML = totalPrice;
+    if (totalPrice == 0){
+        priceField.innerHTML = 0;
+    }
+    else{
+        priceField.innerHTML = totalPrice;
+    }
+    
 }
 
 
-updatePriceField()
+updatePriceField();
 update();
