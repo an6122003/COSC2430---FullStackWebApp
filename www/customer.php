@@ -90,7 +90,7 @@
                                             <div class='row px-5 py-5'>
                                             
                                                 <div class='col-lg-8'>
-                                                    <img alt='image of " . $product['name'] . "' src=../" . $product['image_dir'] . ">
+                                                    <img class='prodImg' alt='image of " . $product['name'] . "' src=../" . $product['image_dir'] . ">
                                                 </div>
                                                 <div class='col-lg-4'>
                                                     <p class='fs-2'>" . $product['name'] . "</p>

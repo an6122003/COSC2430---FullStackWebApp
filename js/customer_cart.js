@@ -9,7 +9,7 @@ var submitOrderButton = document.getElementById("orderSubmitButton");
 
 submitOrderButton.addEventListener('click', finishOrder);
 
-function finishOrder{
+function finishOrder(){
     localStorage.removeItem("data");
     alert("Your order has been submitted");
 }
