@@ -32,8 +32,10 @@
                             if ($product['id'] == $proid){
                                 $proName = $product['name'];
                                 $imageDir = $product['image_dir'];
-                                echo "<img width='200' src ='" . $imageDir . "' alt='product'/> <br>";
-                                echo $proName . '<br>';
+                                echo '<div class="card d-flex" style="width: 18rem;">';
+                                echo "<img class='card-img-top'; width='200' src ='" . $imageDir . "' alt='product'/> <br>";
+                                echo '<div class="h4">'. $proName . '</div><br>';
+                                echo '</div>';
                             }
                         }
                     }
@@ -41,10 +43,10 @@
                     echo 'address: ' . $order['address'] . '<br>';
                     echo "<form method='post' action='process/manage_orders.php'>
                             <input name='id' type='text' hidden value = '" . $order['order_id'] . "'/>
-                            <input type='submit' name='act' value='delivered'/>
-                            <input type='submit' name='act' value='canceled'/>
+                            <input type='submit' name='act' value='delivered' class='btn btn-primary'/>
+                            <input type='submit' name='act' value='canceled' class='btn btn-primary'/>
                         </form>";
-                    echo '-------- <br>';
+                    echo '<hr>';
                 }
               }
         ?>
