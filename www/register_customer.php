@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
 <body>
     <header>
         <?php 
-            include '../header.php';
+            include 'header.php';
         ?>
     </header>
     <main>
@@ -21,7 +25,7 @@
         <section class="form mx-5 my-4">
         <div class="container">
             <div class="row g-0">
-                <div class="col-lg-5"><img src="..//images/login_page/login_image.jpg" alt="" class="img-fluid"></div>
+                <div class="col-lg-5"><img src="../images/login_page/login_image.jpg" alt="" class="img-fluid"></div>
                 <div class="col-lg-7 px-5 py-5">
                     <h1 class="font-weight-bold py-4 px-3">Welcome to our webpage</h1>
                     <h4 class="px-3">Register your account</h4>

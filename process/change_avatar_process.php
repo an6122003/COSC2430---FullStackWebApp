@@ -5,7 +5,7 @@
 
     if(isset($_POST['change'])){
         $newData = [];
-        $lines = file('../accounts.db');
+        $lines = file('../data/accounts.db');
         foreach($lines as $line){
             $lineArray = explode('@@@', $line);
             if($lineArray[1] == $_SESSION['username']){
@@ -16,7 +16,7 @@
                 $newData[] = $line;
             }
         }
-        file_put_contents('../accounts.db', $newData);
-        header ('location: ../my_account.php');
+        file_put_contents('../data/accounts.db', $newData);
+        header ('location: ../www/my_account.php');
     }
 ?>

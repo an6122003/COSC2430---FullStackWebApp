@@ -2,7 +2,7 @@
     //the function take input index which stands for index in each line after exploding, comparedValue used for taking value from POST method
     function checkUniqueness($index,$comparedValue){
         $check = true;
-        $lines = file('../accounts.db');
+        $lines = file('../data/accounts.db');
         foreach($lines as $line){
             $lineArray = explode('@@@', $line);
             if (array_key_exists($index, $lineArray)){
@@ -18,7 +18,7 @@
     include 'avatar_process.php';
 
     function saveToFile($role,$imagePath){
-        $file = fopen('../accounts.db',"a");
+        $file = fopen('../data/accounts.db',"a");
         if ($role == 'customer'){
             fwrite($file, $_POST['role'] . '@@@' . $_POST['username'] . '@@@' . password_hash($_POST['password'], PASSWORD_DEFAULT) . '@@@' . $imagePath . '@@@' . $_POST['name'] . '@@@' . $_POST['address'] . PHP_EOL);
         } else if ($role == 'shipper'){
@@ -75,7 +75,7 @@
                 if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', $_POST['name'], $_POST['address'])){
                     $avatarPath = saveAvatar();
                     saveToFile($_POST['role'], $avatarPath);
-                    header('location: ../register_roles.php?message=succeed');
+                    header('location: ../www/register_roles.php?message=succeed');
                 }
             }
             //store shipper info
@@ -83,7 +83,7 @@
                 if(validateInput($_POST['username'], $_POST['password'], 'none', 'none', 'none', 'none')){
                     $avatarPath = saveAvatar();
                     saveToFile($_POST['role'], $avatarPath);
-                    header('location: ../register_roles.php?message=succeed');
+                    header('location: ../www/register_roles.php?message=succeed');
                 }
             }
             //store vendor info
@@ -94,14 +94,14 @@
                     if(validateInput($_POST['username'], $_POST['password'], $_POST['businessName'], $_POST['businessAddress'], 'none', 'none')){
                         $avatarPath = saveAvatar();
                         saveToFile($_POST['role'], $avatarPath);
-                        header('location: ../register_roles.php?message=succeed');
+                        header('location: ../www/register_roles.php?message=succeed');
                     }
                 } else{
-                    header('location: ../register_fields/register_vendor.php?message=business_exist');
+                    header('location: ../www/register_vendor.php?message=business_exist');
                 }
             }
         } else{
-            header('location: ../register_roles.php?message=fail');
+            header('location: ../www/register_roles.php?message=fail');
         }
 }
 ?>

@@ -27,14 +27,13 @@
     <?php
     $user = $_SESSION['username'];
     $userInfo = [];
-    if ($file = fopen("accounts.db", "r")) {
+    if ($file = fopen("../data/accounts.db", "r")) {
         while(!feof($file)) {
             $line = fgets($file);
             $temp = explode('@@@',$line);
 
             if ($user == $temp[1]){
                 $userInfo = $temp;
-                // print_r($userInfo);
                 break;
             }
         }
@@ -72,7 +71,7 @@ if ($userInfo[0] == "shipper"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                    <form action="../process/change_avatar_process.php" method="post" enctype="multipart/form-data">
                                         <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
@@ -128,7 +127,7 @@ if ($userInfo[0] == "customer"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                    <form action="../process/change_avatar_process.php" method="post" enctype="multipart/form-data">
                                         <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
@@ -189,7 +188,7 @@ if ($userInfo[0] == "vendor"){
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="process/change_avatar_process.php" method="post" enctype="multipart/form-data">
+                                    <form action="../process/change_avatar_process.php" method="post" enctype="multipart/form-data">
                                         <input type="file" name="image">                                  
                                 </div>
                                 <div class="modal-footer">
@@ -241,7 +240,7 @@ if ($userInfo[0] == "vendor"){
         }
     }
 </script>
-    <script src="js/my_account_modal.js"></script>
+    <script src="../js/my_account_modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
