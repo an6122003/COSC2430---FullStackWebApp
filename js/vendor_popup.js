@@ -21,7 +21,7 @@ function displayImg(event){
     {
         popupcontent =
         `
-        <img src="${itemImg}" alt=""><br>
+        <img class='my-3' src="${itemImg}" alt=""><br>
         <h2>${itemName}</h2>
         <h3>${itemPrice}</h3>
         <p>${itemDescription}</p>

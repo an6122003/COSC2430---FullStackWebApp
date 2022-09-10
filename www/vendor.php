@@ -3,7 +3,7 @@
 ?>
 
  <?php 
-$file = fopen("products.csv","r");
+$file = fopen("../data/products.csv","r");
 $data = fgetcsv($file, 1000,",");
 $all_data = [];
 while( ($data = fgetcsv($file, 1000,",")) !==FALSE )
@@ -20,7 +20,7 @@ fclose($file);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="group" content="31">
     <title>Vendor: View my products</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 <body>
     <header>
@@ -47,7 +47,7 @@ fclose($file);
                             <tbody>
                                 <td class="id"><?=$rec[0] ?></td>
                                 <td class="name"><?=$rec[2] ?></td>
-                                <td class="price"><?=$rec[3] ?></td>
+                                <td class="price">$<?=$rec[3] ?></td>
                                 <td>
                                     <div><img class="img" src="<?=$rec[4] ?>" alt="#" style="display:none"></div>
                                     <div class="description" style="display:none"><?=$rec[5] ?></div>
@@ -58,7 +58,7 @@ fclose($file);
                         </table>
                     </div>
                     <div class="col-lg-2">
-                        <button class='addPbutton'><a class='btnA' href="vendor_add.php"><h1>+</h1><h4>New product</h4></a></button>
+                        <button class='addPbutton'><a class='btnA' href="../www/vendor_add.php"><h1>+</h1><h4>New product</h4></a></button>
                     </div>
 
                     <div class="popup" id="pop">
@@ -68,7 +68,7 @@ fclose($file);
             </div>
         </section>
 
-        <script src="js/vendor_popup.js"></script>
+        <script src="../js/vendor_popup.js"></script>
 
     </main>       
 
