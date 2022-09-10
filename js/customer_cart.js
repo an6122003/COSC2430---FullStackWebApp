@@ -3,7 +3,6 @@ var box = [];
 var del = [];
 var price = [];
 var priceField = document.getElementById("priceField");
-var randomHubId = Math.floor(Math.random() * 3) + 1;
 var totalPrice = 0;
 var submitOrderButton = document.getElementById("orderSubmitButton");
 
@@ -16,6 +15,7 @@ function finishOrder(){
 
 for (let i = 1; i < prodCount + 1; i++){
     // get modal div and product div of all the products
+    var cartProductsID = JSON.parse(localStorage.getItem("data")); 
     box[i] = document.getElementById("box" + i);
     del[i] = document.getElementById("del" + i);
     price[i] = Number(document.getElementById("price" + i).innerHTML.replace("$", ""));
@@ -41,8 +41,9 @@ for (let i = 1; i < prodCount + 1; i++){
                 localStorage.setItem("data", JSON.stringify(cartProductsID));
 
                 // update cart number
-                update();
                 fillForm();
+                update();
+                
             }
         }
     }
