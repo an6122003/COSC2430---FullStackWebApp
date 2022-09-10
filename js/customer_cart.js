@@ -5,14 +5,20 @@ var price = [];
 var priceField = document.getElementById("priceField");
 var randomHubId = Math.floor(Math.random() * 3) + 1;
 var totalPrice = 0;
+var submitOrderButton = document.getElementById("orderSubmitButton");
+
+submitOrderButton.addEventListener('click', finishOrder);
+
+function finishOrder{
+    localStorage.removeItem("data");
+    alert("Your order has been submitted");
+}
 
 for (let i = 1; i < prodCount + 1; i++){
     // get modal div and product div of all the products
     box[i] = document.getElementById("box" + i);
     del[i] = document.getElementById("del" + i);
     price[i] = Number(document.getElementById("price" + i).innerHTML.replace("$", ""));
-    
-    
 
     for (let j = 0; j < cartProductsID.length; j++){
         if (i == cartProductsID[j]){

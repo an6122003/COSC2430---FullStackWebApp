@@ -40,7 +40,7 @@
                         echo "
                             <div id=box" . $product['id'] . " class='align-items-center background cartBoxes'>
                                 <div class='col-lg-4'>
-                                    <img src=" . $product['image_dir'] . ">
+                                    <img alt=image of " . $product['name'] . " src=" . $product['image_dir'] . ">
                                 </div>
                                 <div class='col-lg-4'>
                                     <p class='fs-2'>" . $product['name'] . "</p>
@@ -85,7 +85,7 @@
 
                         <span class="fs-2">Total Price: $</span>
                         <span class="fs-2" id="priceField">0</span>
-                        <button class='btn btn-secondary float-end' type='submit'>Submit order</button>
+                        <button class='btn btn-secondary float-end' id="orderSubmitButton" type='submit'>Submit order</button>
                     </form>
                     
                 </div>             

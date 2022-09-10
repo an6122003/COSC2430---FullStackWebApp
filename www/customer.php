@@ -75,7 +75,7 @@
 
                                 // product display
                                 echo "<div class='productDisplay text-bg-light colSplit btn' id='btn" . $product['id'] . "'>
-                                    <img src=" . $product['image_dir'] . ">
+                                    <img alt=image of " . $product['name'] . " src=" . $product['image_dir'] . ">
                                     <p class='fs-2'>" . $product['name'] . "</p>
                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                 </div>";
@@ -90,7 +90,7 @@
                                             <div class='row px-5 py-5'>
                                             
                                                 <div class='col-lg-8'>
-                                                    <img src=" . $product['image_dir'] . ">
+                                                    <img alt=image of " . $product['name'] . " src=" . $product['image_dir'] . ">
                                                 </div>
                                                 <div class='col-lg-4'>
                                                     <p class='fs-2'>" . $product['name'] . "</p>
