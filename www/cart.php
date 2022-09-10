@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="group" content="31">
     <title>Cart</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     
 </head>
 <body>
@@ -25,7 +25,7 @@
     <main>
         <div class="container">
                 <?php
-                    $file_name = 'products.csv';
+                    $file_name = '../data/products.csv';
                     $fp = fopen($file_name, 'r');
                     // first row => field names
                     $first = fgetcsv($fp);
@@ -60,7 +60,7 @@
                     function getCusAddress(){
                         $address = '';
                         if (isset($_SESSION['username'])){
-                            $lines = file('accounts.db');
+                            $lines = file('../data/accounts.db');
                             foreach($lines as $line){
                                 $lineArray = explode('@@@', $line);
                                 if($lineArray[1] == $_SESSION['username']){
@@ -74,9 +74,9 @@
                     $address = getCusAddress();
                 ?>
                 <div class="background">
-                    <form enctype='multipart/form-data' method='post' action='cart_add_order.php'>
+                    <form enctype='multipart/form-data' method='post' action='../process/cart_add_order.php'>
                          
-                        <input type='number' class='d-none' id='orderId' name='orderId' value='<?php echo count(file("order.csv"))?>'>
+                        <input type='number' class='d-none' id='orderId' name='orderId' value='<?php echo count(file("../data/orders.csv"))?>'>
                         <input type='number' class='d-none' id='hubId' name='hubId'>
                         <input type='text' class='d-none' id='productIds' name='productIds'>
                         <input type='text' class='d-none' id='totalPrice' name='totalPrice'>
@@ -95,9 +95,9 @@
         <script type="text/javascript">
             var prodCount = <?php echo count($_SESSION['products']); ?>;
         </script> 
-        <script src="js/customer_cart.js"></script>
-        <script src="js/customer_cart_icon.js"></script>
-        <script src="js/customer_order_submit.js"></script>
+        <script src="../js/customer_cart.js"></script>
+        <script src="../js/customer_cart_icon.js"></script>
+        <script src="../js/customer_order_submit.js"></script>
     </main>
 
     <footer>

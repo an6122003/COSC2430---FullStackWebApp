@@ -34,7 +34,7 @@
                 <div class="col-lg-9">
                     <?php
                         function readFromFile(){
-                            $file_name = 'products.csv';
+                            $file_name = '../data/products.csv';
                             $fp = fopen($file_name, 'r');
                             // first row => field names
                             $first = fgetcsv($fp);
@@ -121,13 +121,13 @@
 
                         /* script to prevent form resubmission */
                         if ( window.history.replaceState ) {
-                            window.history.replaceState( null, null, window.location.href );
+                            window.history.replaceState(null, null, window.location.href );
                         }
                     </script>
                     <!-- activate modal box js -->
-                    <script src="js/customer_modal.js"></script>
+                    <script src="../js/customer_modal.js"></script>
                     <!-- activate cart adding script -->
-                    <script src="js/customer_cart_icon.js"></script>
+                    <script src="../js/customer_cart_icon.js"></script>
                 </div>
             </div>
         </div>

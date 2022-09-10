@@ -28,7 +28,7 @@
 
     <main>
         <?php 
-            $orders = readFromFile('order.csv');
+            $orders = readFromFile('orders.csv');
             $products = readFromFile('products.csv');
             
             foreach ($orders as $order){
