@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/index.php">E-Commerce Website</a>
+            <a class="navbar-brand" href="index.php">E-Commerce Website</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button> <!--tag for responsive navbar bootstrap-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto"> <!--auto margin-->
@@ -18,7 +18,7 @@
                         }
                         echo '<li class="nav-item"><a class="nav-link" href="my_account.php">My Account</a></li>';
                         echo"<li class='nav-item'> 
-                                <form method='post' action='process/logout_process.php'>
+                                <form method='post' action='../process/logout_process.php'>
                                     <button class='nav-link btn btn-link' type='submit' name='logout' value='Logout'>Log out</button>
                                 </form>
                             </li>";
