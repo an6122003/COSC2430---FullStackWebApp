@@ -1,8 +1,6 @@
-<header>
-    <?php 
-        include 'header.php';
-    ?>
-</header>
+<?php 
+    session_start();
+?>
 
  <?php 
 $file = fopen("products.csv","r");
@@ -25,7 +23,11 @@ fclose($file);
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
-
+    <header>
+        <?php 
+            include 'header.php';
+        ?>
+    </header>
     <main>
         <section class='form'>
             <div class='container'>

@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,7 @@
     <meta name="group" content="31">
     <title>Shipper page</title>
     <link rel="stylesheet" href="css/design.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 
@@ -25,15 +30,17 @@
         <?php 
             $orders = readFromFile('orders.csv');
             $products = readFromFile('products.csv');
+            
             foreach ($orders as $order){
                 if ($order['hub'] == $_SESSION['hub'] && $order['status'] == 'active'){
+                    echo '<div style="margin: auto; width: 50%;  font-size: 30px;">'.'Order number: '. $order["order_id"].'</div>';
                     foreach ($order['products_id'] as $proid){
                         foreach ($products as $product){
                             if ($product['id'] == $proid){
                                 $proName = $product['name'];
                                 $imageDir = $product['image_dir'];
                                 echo '<div class="card d-flex" style="width: 18rem;">';
-                                echo "<img class='card-img-top'; width='200' src ='" . $imageDir . "' alt='product'/> <br>";
+                                echo "<img class='card-img-top' src ='" . $imageDir . "' alt='product'/> <br>";
                                 echo '<div class="h4">'. $proName . '</div><br>';
                                 echo '</div>';
                             }

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php session_start(); ?>
+
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +25,7 @@
                 <div class="col-lg-7 px-5 py-5">
                     <h1 class="font-weight-bold py-4 px-3">Welcome to our webpage</h1>
                     <h4 class="px-3">Login to your account</h4>
-                    <form method="post" action="login.php">
+                    <form method="post" action="process/login_process.php">
                         <div class="form-row">
                             <div class="col-lg-7">
                                 <input type="text" name="username" placeholder="User Name" class="form-control p-3 my-4 mx-3"> 
@@ -47,40 +49,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
-<?php
-    function checkLogin(){
-        $check = false;
-        $lines = file('accounts.db');
-        foreach($lines as $line){
-            $lineArray = explode('@@@', $line);
-            if(($lineArray[1] == $_POST['username']) && (password_verify($_POST['password'], $lineArray[2]))){
-                $check = true;
-                break;
-            }
-        }
-        return $check;
-    }
-    if(isset($_POST['login'])){
-        $isLoggedin = checkLogin();
-        if($isLoggedin){
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $_POST['username'];
-            
-            //store the role matching with that username
-            $lines = file('accounts.db');
-            foreach($lines as $line){
-                $lineArray = explode('@@@', $line);
-                if($lineArray[1] == $_POST['username']){
-                    $_SESSION['role'] = $lineArray[0];
-                    if ($lineArray[0] = 'shipper'){
-                        $_SESSION['hub'] = $lineArray[4];
-                    }
-                }
-            }
-            header('location: index.php');
-        } else{
-            echo '<script>alert("Login failed, Incorrect username or password.")</script>';
-        }
-    }
-?>
+
 </html>
