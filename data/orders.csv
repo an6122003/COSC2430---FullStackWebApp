@@ -1,1 +1,7 @@
 orderID,hubID,productIds,totalPrice,address,status
+1,1,"9,10,4",1210,"96 Ba Thang Hai HCM",active
+2,2,"15,1,3",1350,"96 Ba Thang Hai HCM",active
+3,1,"7,5,13",1235,"96 Ba Thang Hai HCM",active
+4,3,"11,12,1",214,"325 Hoang Hoa Tham Ha Noi",active
+5,3,"6,3",260,"325 Hoang Hoa Tham Ha Noi",active
+6,3,"2,12",165,"325 Hoang Hoa Tham Ha Noi",active

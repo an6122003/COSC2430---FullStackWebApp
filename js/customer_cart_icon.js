@@ -1,5 +1,4 @@
 var cartNum = [];
-var cartClickedBool = new Array(prodCount);
 var cartItems = [];
 
 for (let i = 1; i < prodCount + 1; i++) {
@@ -10,7 +9,7 @@ for (let i = 1; i < prodCount + 1; i++) {
         cartNum[i].removeEventListener('click', addToCounter);
         localStorage.setItem("data", JSON.stringify(cartItems));
         update();
-        
+        alert("Item added");
     }
 }
 
