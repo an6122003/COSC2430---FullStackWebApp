@@ -75,7 +75,7 @@
 
                                 // product display
                                 echo "<div class='productDisplay text-bg-light colSplit btn' id='btn" . $product['id'] . "'>
-                                    <img alt=image of " . $product['name'] . " src=../" . $product['image_dir'] . ">
+                                    <img class='prodImg' alt=image of " . $product['name'] . " src=../" . $product['image_dir'] . ">
                                     <p class='fs-2'>" . $product['name'] . "</p>
                                     <p class='fs-4'>$" . $product['price'] . "</p>
                                 </div>";
