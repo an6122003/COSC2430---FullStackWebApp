@@ -8,3 +8,4 @@ id,vendor,name,price,image_dir,description
 7,Vendor123,phone,100,images/products/7.png,loloo
 8,Vendor123,tv,100,images/products/8.png,tv
 9,Vendor123,abc,200,images/products/9.png,ololo
+10,Vendor123,tv,900,images/products/10.png,"tv desc"

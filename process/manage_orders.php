@@ -5,7 +5,7 @@
         $newOrders = [];
         $orders = readFromFile('../order.csv');
         foreach ($orders as $order){
-            if ($order['orderId'] == $_POST['id']){
+            if ($order['orderID'] == $_POST['id']){
                 $order['status'] = $_POST['act'];
             }
             $newOrders[] = $order;

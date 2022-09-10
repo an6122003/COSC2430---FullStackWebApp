@@ -33,6 +33,7 @@
                 header('location: ../index.php');
             } else{
                 echo '<script>alert("Login failed, Incorrect username or password.")</script>';
+                header('location: ../login.php');
             }
     }
 ?>
