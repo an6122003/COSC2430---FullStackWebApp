@@ -11019,7 +11019,8 @@ textarea.form-control-lg {
 }
 
 .popup img{
-  width: 280px;
+  max-height:50%;
+  width: auto;
   box-shadow: 0 2px 5px rgba(0,0,0,2);
 }
 
