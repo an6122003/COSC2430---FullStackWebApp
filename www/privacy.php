@@ -19,16 +19,18 @@
         ?>
     </header>
     <main>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor 
-            risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet 
-            quam vehicula elementum sed sit amet dui.
-        </p>
-        <p>
-            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
-            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut 
-            libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-        </p>
+        <div class = container>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor 
+                risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet 
+                quam vehicula elementum sed sit amet dui.
+            </p>
+            <p>
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim. 
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut 
+                libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            </p>
+        </div>
     </main>
 
     <footer>
