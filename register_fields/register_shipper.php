@@ -50,9 +50,9 @@
                         <div class="form-row">
                             <div class="col-lg-7">
                                 <select id='distributionHub' name='distributionHub' required placeholder="Distribution hub" class="form-control p-3 my-4 mx-3">
-                                    <option value="hub1">Hub 1</option>
-                                    <option value="hub2">Hub 2</option>
-                                    <option value="hub3">Hub 3</option>
+                                    <option value="1">Hub 1</option>
+                                    <option value="2">Hub 2</option>
+                                    <option value="3">Hub 3</option>
                                 </select>
                             </div>
                         </div>

@@ -45,10 +45,9 @@
     <main>
         <?php 
             $orders = readFromFile();
-            $_SESSION['hub'] = 1;
             foreach ($orders  as $order){
                 if ($order['hub'] == $_SESSION['hub']){
-                    echo "<p>" . $order['products'] . "/" . $order['total price'] . "/ " . $order['address'] ."</p>";
+                    echo "<p>" . $order['ord id'] . "/" . $order['products id'] . "/ " . $order['total price'] ."/ " . $order['address'] . "</p>";
                 }
               }
         ?>
