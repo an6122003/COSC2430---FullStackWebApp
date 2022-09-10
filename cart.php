@@ -73,12 +73,12 @@
                 <div class="background">
                     <form enctype='multipart/form-data' method='post' action='cart_add_order.php'>
                          
-                        orderId <input type='number' id='orderId' name='orderId' value='<?php echo count(file("order.csv"))?>'>
-                        hubId <input type='number' id='hubId' name='hubId'>
-                        productIds <input type='text' id='productIds' name='productIds'>
-                        totalPrice <input type='text' id='totalPrice' name='totalPrice'>
-                        address <input type='text' id='address' name='address' value='<?php echo $_SESSION["cusAddress"]?>'>
-                        status <input type='text' id='status' name='status'>
+                        <input type='number' class='d-none' id='orderId' name='orderId' value='<?php echo count(file("order.csv"))?>'>
+                        <input type='number' class='d-none' id='hubId' name='hubId'>
+                        <input type='text' class='d-none' id='productIds' name='productIds'>
+                        <input type='text' class='d-none' id='totalPrice' name='totalPrice'>
+                        <input type='text' class='d-none' id='address' name='address' value='<?php echo $_SESSION["cusAddress"]?>'>
+                        <input type='text' class='d-none' id='status' name='status'>
 
                         <span class="fs-2">Total Price: $</span>
                         <span class="fs-2" id="priceField">0</span>
