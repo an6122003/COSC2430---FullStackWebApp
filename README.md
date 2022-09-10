@@ -20,32 +20,14 @@ Once you are logged in, you will have access to the relevant information dependi
 
 Login Info:
     Customer:
-        Username:
-        Password:
-
-        Username:
-        Password:
-
-        Username:
-        Password:
+        Username: Customer123
+        Password: Customer123@
     
     Vendor:
-        Username:
-        Password:
-
-        Username:
-        Password:
-
-        Username:
-        Password:
+        Username: Vendor123
+        Password: Vendor123@
 
     Shipper:
-        Username:
-        Password:
-
-        Username:
-        Password:
-
-        Username:
-        Password:
+        Username: Shipper123
+        Password: Shipper123@
 
