@@ -15,7 +15,7 @@
 <body>
     <header>
         <?php 
-            include 'header.php';
+            include 'customer_header.php';
         ?>
     </header>
 

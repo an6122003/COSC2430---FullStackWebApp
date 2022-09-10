@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="/index.php">E-Commerce Website</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button> <!--tag for responsive navbar bootstrap-->
@@ -29,6 +29,12 @@
                 </ul>
                 
 
+                <a href="cart.php">
+                    <button type="button" id="cartBtn" class="btn btn-outline-dark" action="cart.php">
+                        <span>Cart</span>
+                        <span id="cartCounter" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </button>
+                </a>
                     
 
                 <!-- activate cart adding script -->
