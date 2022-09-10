@@ -31,3 +31,9 @@ Login Info:
         Username: Shipper123
         Password: Shipper123@
 
+Source:
+Logo image: https://www.pngegg.com/en/png-yjguu
+https://www.w3schools.com/howto/howto_css_image_avatar.asp
+https://www.w3schools.com/howto/img_avatar2.png
+https://www.flaticon.com/free-icon/avatar_147144
+
