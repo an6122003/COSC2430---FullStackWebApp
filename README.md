@@ -9,7 +9,7 @@ Tran Gia Minh Thong     s3924667
 
 Contribution: All members contributed equally
 
-Demo URL:
+Demo URL: https://www.youtube.com/watch?v=JKgpHbFurIA
 
 Startup guide:
 Launch the site at index.php
