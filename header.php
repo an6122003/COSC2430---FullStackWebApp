@@ -4,7 +4,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button> <!--tag for responsive navbar bootstrap-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto"> <!--auto margin-->
-                    <li class="nav-item"><a class="nav-link"href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link"href="/index.php">Home</a></li>
                     <?php 
                     if(isset($_SESSION['loggedin'])){
                         if (isset($_SESSION['role']) && $_SESSION['role'] == 'customer'){
