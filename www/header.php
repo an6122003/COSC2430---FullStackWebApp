@@ -1,5 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
+            <a href="index.php"><img src="../images/header/logo.png" width="40px" class="navbar-brand"></a>
             <a class="navbar-brand" href="index.php">E-Commerce Website</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button> <!--tag for responsive navbar bootstrap-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
