@@ -22,18 +22,27 @@ Login Info:
     Customer:
         Username: Customer123
         Password: Customer123@
-    
+
+        Username: Customer1
+        Password: Customer1@
+
     Vendor:
         Username: Vendor123
         Password: Vendor123@
 
+        Username: Vendor11
+        Password: Vendor11@
+
     Shipper:
         Username: Shipper123
         Password: Shipper123@
+
+        Username: Shipper11
+        Password: Shipper11@
 
 Source:
 Logo image: https://www.pngegg.com/en/png-yjguu
 https://www.w3schools.com/howto/howto_css_image_avatar.asp
 https://www.w3schools.com/howto/img_avatar2.png
 https://www.flaticon.com/free-icon/avatar_147144
-
+https://freerangestock.com/photos/120572/business-man-profile-vector.html
