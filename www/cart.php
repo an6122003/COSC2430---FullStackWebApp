@@ -18,10 +18,6 @@
             include 'header.php';
         ?>
     </header>
-
-    <script>
-
-    </script>
     <main>
         <div class="container">
                 <?php

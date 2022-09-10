@@ -1,6 +1,6 @@
 <nav>
-    <a href="footer_links/about.txt">About</a>
-    <a href="footer_links/copy_right.txt">Copy Right</a>
-    <a href="footer_links/privacy.txt">Privacy</a>
-    <a href="footer_links/help.txt">Help</a>
+    <a href="about.php">About</a>
+    <a href="copyright.php">Copy Right</a>
+    <a href="privacy.php">Privacy</a>
+    <a href="help.php">Help</a>
 </nav>
