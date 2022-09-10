@@ -22,22 +22,25 @@ Login Info:
     Customer:
         Username: Customer123
         Password: Customer123@
-    
+
+        Username: Customer1
+        Password: Customer1@
+
     Vendor:
         Username: Vendor123
         Password: Vendor123@
+
+        Username: Vendor11
+        Password: Vendor11@
 
     Shipper:
         Username: Shipper123
         Password: Shipper123@
 
-Source:
-Logo image: https://www.pngegg.com/en/png-yjguu
-https://www.w3schools.com/howto/howto_css_image_avatar.asp
-https://www.w3schools.com/howto/img_avatar2.png
-https://www.flaticon.com/free-icon/avatar_147144
+        Username: Shipper11
+        Password: Shipper11@
 
-Product image:
+Source:
 1 https://pixabay.com/photos/running-shoes-sneakers-sports-shoes-115149/
 2 https://pixabay.com/photos/headphones-retro-headphones-1720164/
 3 https://pixabay.com/photos/lens-camera-photography-3114729/
@@ -53,5 +56,10 @@ Product image:
 13 https://pixabay.com/photos/tennis-sport-sport-equipment-racket-3554019/
 14 https://pixabay.com/photos/the-brew-kettle-transparent-3540132/
 15 https://pixabay.com/photos/tv-android-tv-television-network-627876/
-
+16 https://www.pngegg.com/en/png-yjguu
+17 https://www.w3schools.com/howto/howto_css_image_avatar.asp
+18 https://www.w3schools.com/howto/img_avatar2.png
+19 https://www.flaticon.com/free-icon/avatar_147144
+20 https://freerangestock.com/photos/120572/business-man-profile-vector.html
+21 https://sg-test-11.slatic.net/other/homepage/b9710b4280d5354c72744bfabf11998f.jpeg
 
