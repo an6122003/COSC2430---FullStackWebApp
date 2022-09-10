@@ -28,13 +28,13 @@
 
     <main>
         <?php 
-            $orders = readFromFile('orders.csv');
+            $orders = readFromFile('order.csv');
             $products = readFromFile('products.csv');
             
             foreach ($orders as $order){
-                if ($order['hub'] == $_SESSION['hub'] && $order['status'] == 'active'){
-                    echo '<div style="margin: auto; width: 50%;  font-size: 30px;">'.'Order number: '. $order["order_id"].'</div>';
-                    foreach ($order['products_id'] as $proid){
+                if ($order['hubID'] == $_SESSION['hubID'] && $order['status'] == 'active'){
+                    echo '<div style="margin: auto; width: 50%;  font-size: 30px;">'.'Order number: '. $order["orderID"].'</div>';
+                    foreach ($order['productIds'] as $proid){
                         foreach ($products as $product){
                             if ($product['id'] == $proid){
                                 $proName = $product['name'];
@@ -46,10 +46,10 @@
                             }
                         }
                     }
-                    echo 'total price:' . $order['total_price'] . '<br>';
+                    echo 'total price:' . $order['totalPrice'] . '<br>';
                     echo 'address: ' . $order['address'] . '<br>';
                     echo "<form method='post' action='process/manage_orders.php'>
-                            <input name='id' type='text' hidden value = '" . $order['order_id'] . "'/>
+                            <input name='id' type='text' hidden value = '" . $order['orderID'] . "'/>
                             <input type='submit' name='act' value='delivered' class='btn btn-primary'/>
                             <input type='submit' name='act' value='canceled' class='btn btn-primary'/>
                         </form>";

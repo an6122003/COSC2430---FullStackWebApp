@@ -1,4 +1,4 @@
-hub,order_id,products_id,total_price,address,status
+orderID,hubID,productIds,totalPrice,address,status
 1,1,"1,2"," 100","111, thiendang, hn",active
 2,2,"3,4"," 200","222,thiendang, hn",active
 3,3,"5,6"," 300","333, rmit, hcm",active

@@ -26,7 +26,7 @@
                     if($lineArray[1] == $_POST['username']){
                         $_SESSION['role'] = $lineArray[0];
                         if ($lineArray[0] = 'shipper'){
-                            $_SESSION['hub'] = $lineArray[4];
+                            $_SESSION['hubID'] = $lineArray[4];
                         }
                     }
                 }

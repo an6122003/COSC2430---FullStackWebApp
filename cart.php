@@ -68,10 +68,10 @@
                                 }
                             }
                         }
-                        $_SESSION['cusAddress'] = $address;
+                        return $address;
                     }
 
-
+                    $address = getCusAddress();
                 ?>
                 <div class="background">
                     <form enctype='multipart/form-data' method='post' action='cart_add_order.php'>
@@ -80,7 +80,7 @@
                         <input type='number' class='d-none' id='hubId' name='hubId'>
                         <input type='text' class='d-none' id='productIds' name='productIds'>
                         <input type='text' class='d-none' id='totalPrice' name='totalPrice'>
-                        <input type='text' class='d-none' id='address' name='address' value='<?php echo $_SESSION["cusAddress"]?>'>
+                        <input type='text' class='d-none' id='address' name='address' value='<?php echo $address?>'>
                         <input type='text' class='d-none' id='status' name='status'>
 
                         <span class="fs-2">Total Price: $</span>

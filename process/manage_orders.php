@@ -3,14 +3,14 @@
 
     if (isset($_POST['act'])){
         $newOrders = [];
-        $orders = readFromFile('../orders.csv');
+        $orders = readFromFile('../order.csv');
         foreach ($orders as $order){
-            if ($order['order_id'] == $_POST['id']){
+            if ($order['orderId'] == $_POST['id']){
                 $order['status'] = $_POST['act'];
             }
             $newOrders[] = $order;
         }
-        saveToFile('../orders.csv', $newOrders);
+        saveToFile('../order.csv', $newOrders);
         header ('location: ../shipper.php');
     }
 ?>

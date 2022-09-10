@@ -2,12 +2,12 @@
         function saveToFile($fname, $orders) {
             $file_name = $fname;
             $fp = fopen($file_name, 'w');
-            $fields = ['hub', 'order_id', 'products_id', 'total_price', 'address', 'status'];
+            $fields = ['orderID', 'hubID', 'productIds', 'totalPrice', 'address', 'status'];
             fputcsv($fp, $fields);
             if (is_array($orders)) {
               foreach ($orders as $order) {
                 // for the sizes, store them as a comma separated string
-                $order['products_id'] = implode(',', $order['products_id']);
+                $order['productIds'] = implode(',', $order['productIds']);
                 fputcsv($fp, $order);
               }
             }
@@ -26,7 +26,7 @@
                 $order[$col_name] =  $row[$i];
                 // treat sizes differently
                 // make it an array
-                if ($col_name == 'products_id') {
+                if ($col_name == 'productIds') {
                 $order[$col_name] = explode(',', $order[$col_name]);
                 }
                 $i++;
