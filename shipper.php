@@ -18,8 +18,22 @@
     </header>
 
     <?php 
-        function readFromFile() {
-            $file_name = 'orders.csv';
+        function saveToFile($fname, $orders) {
+            $file_name = $fname;
+            $fp = fopen($file_name, 'w');
+            $fields = ['hub', 'order_id', 'products_id', 'total_price', 'address'];
+            fputcsv($fp, $fields);
+            if (is_array($orders)) {
+              foreach ($orders as $order) {
+                // for the sizes, store them as a comma separated string
+                $order['products_id'] = implode(',', $order['products_id']);
+                fputcsv($fp, $order);
+              }
+            }
+        }
+
+        function readFromFile($fname) {
+            $file_name = $fname;
             $fp = fopen($file_name, 'r');
             // first row => field names
             $first = fgetcsv($fp);
@@ -31,7 +45,7 @@
                 $order[$col_name] =  $row[$i];
                 // treat sizes differently
                 // make it an array
-                if ($col_name == 'sizes') {
+                if ($col_name == 'products_id') {
                 $order[$col_name] = explode(',', $order[$col_name]);
                 }
                 $i++;
@@ -44,20 +58,52 @@
 
     <main>
         <?php 
-            $orders = readFromFile();
-            foreach ($orders  as $order){
+            $orders = readFromFile('orders.csv');
+            $products = readFromFile('products.csv');
+            foreach ($orders as $order){
                 if ($order['hub'] == $_SESSION['hub']){
-                    echo "<p>" . $order['ord id'] . "/" . $order['products id'] . "/ " . $order['total price'] ."/ " . $order['address'] . "</p>";
+                    foreach ($order['products_id'] as $proid){
+                        foreach ($products as $product){
+                            if ($product['id'] == $proid){
+                                $proName = $product['name'];
+                                $imageDir = $product['image_dir'];
+                                echo "<img width='200' src ='" . $imageDir . "' alt='product'/> <br>";
+                                echo $proName . '<br>';
+                            }
+                        }
+                    }
+                    echo 'total price:' . $order['total_price'] . '<br>';
+                    echo 'address: ' . $order['address'] . '<br>';
+                    echo "<form method='post' action='shipper.php'>
+                            <input name='id' type='text' hidden value = '" . $order['order_id'] . "'/>
+                            <input type='submit' name='act' value='delivered'/>
+                            <input type='submit' name='act' value='canceled'/>
+                        </form>";
+                    echo '-------- <br>';
                 }
               }
         ?>
     </main>
-
     <footer>
         <?php 
             include 'footer.php';
         ?>
     </footer>
 </body>
+<?php 
+    if (isset($_POST['act'])){
+        $newOrders = [];
+        $orders = readFromFile('orders.csv');
+        foreach ($orders as $order){
+            if ($order['order_id'] == $_POST['id']){
+                continue;
+            } else{
+                $newOrders[] = $order;
+            }
+        }
+        saveToFile('orders.csv', $newOrders);
+        header ('location: shipper.php');
+    }
+?>
 
 </html>
