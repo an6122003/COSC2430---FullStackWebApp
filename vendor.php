@@ -31,8 +31,7 @@ fclose($file);
     <main>
         <section class='form'>
             <div class='container'>
-                <h1> Vendor: <?php $_SESSION['username']?> </h1>
-                <div class='row background'>
+                <div class='row background my-4'>
                     <div class='col-lg-10'>
                         <h2>My Products</h2>
                         <p style='text-align:right'>Total: <?php echo count($all_data)?></p>

@@ -21,8 +21,7 @@
 
     <main>
       <div class='container'>
-        <h1>Vendor: <?php $_SESSION['username']?> </h1>
-        <div class='row background'>
+        <div class='row background my-4'>
           <h2 class="font-weight-bold py-4 px-3">New product</h2>
           <form enctype='multipart/form-data' method='post' action='addproduct.php' class="addproductForm">
             <div class="form-row">
@@ -34,13 +33,13 @@
             <div class="form-row">
               <div class="col-lg-7">
                 <h5 class="my-0 py-0 px-3">Name</h5>
-                <input type='text' name='name' required class="form-control p-2 my-2 mx-3">
+                <input type='text' id='name' name='name' placeholder="10 to 20 characters" required minlength='10' maxlength='20' class="form-control p-2 my-2 mx-3">
               </div>
             </div>
             <div class="form-row">
               <div class="col-lg-7">
                 <h5 class="my-0 py-0 px-3">Price</h5>
-                <input type='text' id='price' name='price' required class="form-control p-2 my-2 mx-3">
+                <input type='number' id='price' placeholder="digits only" name='price' class="form-control p-2 my-2 mx-3">
               </div>
             </div>
             <div class="form-row">
@@ -52,7 +51,7 @@
             <div class="form-row">
               <div class="col-lg-7">
                 <h5 class="my-0 py-0 px-3">Description</h5>
-                <input type='text' id='description' name='description' required class="form-control p-2 my-2 mx-3">
+                <input type='text' id='description' name='description' required placeholder="maximum 500 characters" maxlength='500' class="form-control p-2 my-2 mx-3">
               </div>
             </div>
             <div class="form-row">
